@@ -48,6 +48,7 @@
 	</ciManagement>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cxf.version>2.7.7</cxf.version>
 		<maven.compiler.version>3.1</maven.compiler.version>
 		<jdk.version>1.7</jdk.version>
 		<maven.javadoc.version>2.9.1</maven.javadoc.version>
@@ -115,6 +116,38 @@
 								<phase>verify</phase>
 								<goals>
 									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>codegen</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.cxf</groupId>
+						<artifactId>cxf-codegen-plugin</artifactId>
+						<version>${cxf.version}</version>
+						<executions>
+							<execution>
+								<id>generate-sources</id>
+								<phase>generate-sources</phase>
+								<configuration>
+									<sourceRoot>${basedir}/src/main/java</sourceRoot>
+									<wsdlOptions>
+										<wsdlOption>
+											<wsdl>${basedir}/src/main/resources/CMISWS-Service.wsdl</wsdl>
+											<extraargs>
+												<extraarg>-impl</extraarg>
+											</extraargs>
+										</wsdlOption>
+									</wsdlOptions>
+								</configuration>
+								<goals>
+									<goal>wsdl2java</goal>
 								</goals>
 							</execution>
 						</executions>
