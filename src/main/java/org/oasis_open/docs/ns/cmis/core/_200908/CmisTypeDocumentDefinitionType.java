@@ -1,3 +1,4 @@
+
 package org.oasis_open.docs.ns.cmis.core._200908;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -5,13 +6,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java class for cmisTypeDocumentDefinitionType complex type.
+ * <p>Java class for cmisTypeDocumentDefinitionType complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="cmisTypeDocumentDefinitionType">
@@ -30,49 +29,56 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cmisTypeDocumentDefinitionType", propOrder = { "versionable",
-		"contentStreamAllowed" })
-public class CmisTypeDocumentDefinitionType extends CmisTypeDefinitionType {
+@XmlType(name = "cmisTypeDocumentDefinitionType", propOrder = {
+    "versionable",
+    "contentStreamAllowed"
+})
+public class CmisTypeDocumentDefinitionType
+    extends CmisTypeDefinitionType
+{
 
-	protected boolean versionable;
-	@XmlElement(required = true)
-	protected EnumContentStreamAllowed contentStreamAllowed;
+    protected boolean versionable;
+    @XmlElement(required = true)
+    protected EnumContentStreamAllowed contentStreamAllowed;
 
-	/**
-	 * Gets the value of the versionable property.
-	 * 
-	 */
-	public boolean isVersionable() {
-		return versionable;
-	}
+    /**
+     * Gets the value of the versionable property.
+     * 
+     */
+    public boolean isVersionable() {
+        return versionable;
+    }
 
-	/**
-	 * Sets the value of the versionable property.
-	 * 
-	 */
-	public void setVersionable(boolean value) {
-		this.versionable = value;
-	}
+    /**
+     * Sets the value of the versionable property.
+     * 
+     */
+    public void setVersionable(boolean value) {
+        this.versionable = value;
+    }
 
-	/**
-	 * Gets the value of the contentStreamAllowed property.
-	 * 
-	 * @return possible object is {@link EnumContentStreamAllowed }
-	 * 
-	 */
-	public EnumContentStreamAllowed getContentStreamAllowed() {
-		return contentStreamAllowed;
-	}
+    /**
+     * Gets the value of the contentStreamAllowed property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link EnumContentStreamAllowed }
+     *     
+     */
+    public EnumContentStreamAllowed getContentStreamAllowed() {
+        return contentStreamAllowed;
+    }
 
-	/**
-	 * Sets the value of the contentStreamAllowed property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link EnumContentStreamAllowed }
-	 * 
-	 */
-	public void setContentStreamAllowed(EnumContentStreamAllowed value) {
-		this.contentStreamAllowed = value;
-	}
+    /**
+     * Sets the value of the contentStreamAllowed property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link EnumContentStreamAllowed }
+     *     
+     */
+    public void setContentStreamAllowed(EnumContentStreamAllowed value) {
+        this.contentStreamAllowed = value;
+    }
 
 }

@@ -1,8 +1,8 @@
+
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -10,17 +10,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 import org.oasis_open.docs.ns.cmis.core._200908.CmisAccessControlListType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisPropertiesType;
 
+
 /**
- * <p>
- * Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -46,263 +43,285 @@ import org.oasis_open.docs.ns.cmis.core._200908.CmisPropertiesType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "repositoryId", "objectId", "major",
-		"properties", "contentStream", "checkinComment", "policies", "addACEs",
-		"removeACEs", "extension" })
+@XmlType(name = "", propOrder = {
+    "repositoryId",
+    "objectId",
+    "major",
+    "properties",
+    "contentStream",
+    "checkinComment",
+    "policies",
+    "addACEs",
+    "removeACEs",
+    "extension"
+})
 @XmlRootElement(name = "checkIn")
 public class CheckIn {
 
-	@XmlElement(required = true)
-	protected String repositoryId;
-	@XmlElement(required = true)
-	protected String objectId;
-	@XmlElementRef(name = "major", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-	protected JAXBElement<Boolean> major;
-	@XmlElementRef(name = "properties", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-	protected JAXBElement<CmisPropertiesType> properties;
-	@XmlElementRef(name = "contentStream", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-	protected JAXBElement<CmisContentStreamType> contentStream;
-	@XmlElementRef(name = "checkinComment", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-	protected JAXBElement<String> checkinComment;
-	@XmlElement(nillable = true)
-	protected List<String> policies;
-	@XmlElementRef(name = "addACEs", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-	protected JAXBElement<CmisAccessControlListType> addACEs;
-	@XmlElementRef(name = "removeACEs", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-	protected JAXBElement<CmisAccessControlListType> removeACEs;
-	@XmlElementRef(name = "extension", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-	protected JAXBElement<CmisExtensionType> extension;
+    @XmlElement(required = true)
+    protected String repositoryId;
+    @XmlElement(required = true)
+    protected String objectId;
+    @XmlElementRef(name = "major", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+    protected JAXBElement<Boolean> major;
+    @XmlElementRef(name = "properties", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+    protected JAXBElement<CmisPropertiesType> properties;
+    @XmlElementRef(name = "contentStream", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+    protected JAXBElement<CmisContentStreamType> contentStream;
+    @XmlElementRef(name = "checkinComment", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> checkinComment;
+    @XmlElement(nillable = true)
+    protected List<String> policies;
+    @XmlElementRef(name = "addACEs", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+    protected JAXBElement<CmisAccessControlListType> addACEs;
+    @XmlElementRef(name = "removeACEs", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+    protected JAXBElement<CmisAccessControlListType> removeACEs;
+    @XmlElementRef(name = "extension", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+    protected JAXBElement<CmisExtensionType> extension;
 
-	/**
-	 * Gets the value of the repositoryId property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getRepositoryId() {
-		return repositoryId;
-	}
+    /**
+     * Gets the value of the repositoryId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRepositoryId() {
+        return repositoryId;
+    }
 
-	/**
-	 * Sets the value of the repositoryId property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setRepositoryId(String value) {
-		this.repositoryId = value;
-	}
+    /**
+     * Sets the value of the repositoryId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRepositoryId(String value) {
+        this.repositoryId = value;
+    }
 
-	/**
-	 * Gets the value of the objectId property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getObjectId() {
-		return objectId;
-	}
+    /**
+     * Gets the value of the objectId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getObjectId() {
+        return objectId;
+    }
 
-	/**
-	 * Sets the value of the objectId property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setObjectId(String value) {
-		this.objectId = value;
-	}
+    /**
+     * Sets the value of the objectId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setObjectId(String value) {
+        this.objectId = value;
+    }
 
-	/**
-	 * Gets the value of the major property.
-	 * 
-	 * @return possible object is {@link JAXBElement }{@code <}{@link Boolean }
-	 *         {@code >}
-	 * 
-	 */
-	public JAXBElement<Boolean> getMajor() {
-		return major;
-	}
+    /**
+     * Gets the value of the major property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *     
+     */
+    public JAXBElement<Boolean> getMajor() {
+        return major;
+    }
 
-	/**
-	 * Sets the value of the major property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link JAXBElement }{@code <}{@link Boolean }
-	 *            {@code >}
-	 * 
-	 */
-	public void setMajor(JAXBElement<Boolean> value) {
-		this.major = value;
-	}
+    /**
+     * Sets the value of the major property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *     
+     */
+    public void setMajor(JAXBElement<Boolean> value) {
+        this.major = value;
+    }
 
-	/**
-	 * Gets the value of the properties property.
-	 * 
-	 * @return possible object is {@link JAXBElement }{@code <}
-	 *         {@link CmisPropertiesType }{@code >}
-	 * 
-	 */
-	public JAXBElement<CmisPropertiesType> getProperties() {
-		return properties;
-	}
+    /**
+     * Gets the value of the properties property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link CmisPropertiesType }{@code >}
+     *     
+     */
+    public JAXBElement<CmisPropertiesType> getProperties() {
+        return properties;
+    }
 
-	/**
-	 * Sets the value of the properties property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link JAXBElement }{@code <}
-	 *            {@link CmisPropertiesType }{@code >}
-	 * 
-	 */
-	public void setProperties(JAXBElement<CmisPropertiesType> value) {
-		this.properties = value;
-	}
+    /**
+     * Sets the value of the properties property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link CmisPropertiesType }{@code >}
+     *     
+     */
+    public void setProperties(JAXBElement<CmisPropertiesType> value) {
+        this.properties = value;
+    }
 
-	/**
-	 * Gets the value of the contentStream property.
-	 * 
-	 * @return possible object is {@link JAXBElement }{@code <}
-	 *         {@link CmisContentStreamType }{@code >}
-	 * 
-	 */
-	public JAXBElement<CmisContentStreamType> getContentStream() {
-		return contentStream;
-	}
+    /**
+     * Gets the value of the contentStream property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link CmisContentStreamType }{@code >}
+     *     
+     */
+    public JAXBElement<CmisContentStreamType> getContentStream() {
+        return contentStream;
+    }
 
-	/**
-	 * Sets the value of the contentStream property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link JAXBElement }{@code <}
-	 *            {@link CmisContentStreamType }{@code >}
-	 * 
-	 */
-	public void setContentStream(JAXBElement<CmisContentStreamType> value) {
-		this.contentStream = value;
-	}
+    /**
+     * Sets the value of the contentStream property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link CmisContentStreamType }{@code >}
+     *     
+     */
+    public void setContentStream(JAXBElement<CmisContentStreamType> value) {
+        this.contentStream = value;
+    }
 
-	/**
-	 * Gets the value of the checkinComment property.
-	 * 
-	 * @return possible object is {@link JAXBElement }{@code <}{@link String }
-	 *         {@code >}
-	 * 
-	 */
-	public JAXBElement<String> getCheckinComment() {
-		return checkinComment;
-	}
+    /**
+     * Gets the value of the checkinComment property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getCheckinComment() {
+        return checkinComment;
+    }
 
-	/**
-	 * Sets the value of the checkinComment property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link JAXBElement }{@code <}{@link String }
-	 *            {@code >}
-	 * 
-	 */
-	public void setCheckinComment(JAXBElement<String> value) {
-		this.checkinComment = value;
-	}
+    /**
+     * Sets the value of the checkinComment property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setCheckinComment(JAXBElement<String> value) {
+        this.checkinComment = value;
+    }
 
-	/**
-	 * Gets the value of the policies property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the policies property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getPolicies().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getPolicies() {
-		if (policies == null) {
-			policies = new ArrayList<String>();
-		}
-		return this.policies;
-	}
+    /**
+     * Gets the value of the policies property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the policies property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPolicies().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getPolicies() {
+        if (policies == null) {
+            policies = new ArrayList<String>();
+        }
+        return this.policies;
+    }
 
-	/**
-	 * Gets the value of the addACEs property.
-	 * 
-	 * @return possible object is {@link JAXBElement }{@code <}
-	 *         {@link CmisAccessControlListType }{@code >}
-	 * 
-	 */
-	public JAXBElement<CmisAccessControlListType> getAddACEs() {
-		return addACEs;
-	}
+    /**
+     * Gets the value of the addACEs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link CmisAccessControlListType }{@code >}
+     *     
+     */
+    public JAXBElement<CmisAccessControlListType> getAddACEs() {
+        return addACEs;
+    }
 
-	/**
-	 * Sets the value of the addACEs property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link JAXBElement }{@code <}
-	 *            {@link CmisAccessControlListType }{@code >}
-	 * 
-	 */
-	public void setAddACEs(JAXBElement<CmisAccessControlListType> value) {
-		this.addACEs = value;
-	}
+    /**
+     * Sets the value of the addACEs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link CmisAccessControlListType }{@code >}
+     *     
+     */
+    public void setAddACEs(JAXBElement<CmisAccessControlListType> value) {
+        this.addACEs = value;
+    }
 
-	/**
-	 * Gets the value of the removeACEs property.
-	 * 
-	 * @return possible object is {@link JAXBElement }{@code <}
-	 *         {@link CmisAccessControlListType }{@code >}
-	 * 
-	 */
-	public JAXBElement<CmisAccessControlListType> getRemoveACEs() {
-		return removeACEs;
-	}
+    /**
+     * Gets the value of the removeACEs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link CmisAccessControlListType }{@code >}
+     *     
+     */
+    public JAXBElement<CmisAccessControlListType> getRemoveACEs() {
+        return removeACEs;
+    }
 
-	/**
-	 * Sets the value of the removeACEs property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link JAXBElement }{@code <}
-	 *            {@link CmisAccessControlListType }{@code >}
-	 * 
-	 */
-	public void setRemoveACEs(JAXBElement<CmisAccessControlListType> value) {
-		this.removeACEs = value;
-	}
+    /**
+     * Sets the value of the removeACEs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link CmisAccessControlListType }{@code >}
+     *     
+     */
+    public void setRemoveACEs(JAXBElement<CmisAccessControlListType> value) {
+        this.removeACEs = value;
+    }
 
-	/**
-	 * Gets the value of the extension property.
-	 * 
-	 * @return possible object is {@link JAXBElement }{@code <}
-	 *         {@link CmisExtensionType }{@code >}
-	 * 
-	 */
-	public JAXBElement<CmisExtensionType> getExtension() {
-		return extension;
-	}
+    /**
+     * Gets the value of the extension property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link CmisExtensionType }{@code >}
+     *     
+     */
+    public JAXBElement<CmisExtensionType> getExtension() {
+        return extension;
+    }
 
-	/**
-	 * Sets the value of the extension property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link JAXBElement }{@code <}
-	 *            {@link CmisExtensionType }{@code >}
-	 * 
-	 */
-	public void setExtension(JAXBElement<CmisExtensionType> value) {
-		this.extension = value;
-	}
+    /**
+     * Sets the value of the extension property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link CmisExtensionType }{@code >}
+     *     
+     */
+    public void setExtension(JAXBElement<CmisExtensionType> value) {
+        this.extension = value;
+    }
 
 }

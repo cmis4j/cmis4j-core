@@ -1,24 +1,21 @@
+
 package org.oasis_open.docs.ns.cmis.core._200908;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-
 import org.w3c.dom.Element;
 
+
 /**
- * <p>
- * Java class for cmisExtensionFeatureType complex type.
+ * <p>Java class for cmisExtensionFeatureType complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="cmisExtensionFeatureType">
@@ -41,185 +38,206 @@ import org.w3c.dom.Element;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cmisExtensionFeatureType", propOrder = { "id", "url",
-		"commonName", "versionLabel", "description", "featureData", "any" })
+@XmlType(name = "cmisExtensionFeatureType", propOrder = {
+    "id",
+    "url",
+    "commonName",
+    "versionLabel",
+    "description",
+    "featureData",
+    "any"
+})
 public class CmisExtensionFeatureType {
 
-	@XmlElement(required = true)
-	@XmlSchemaType(name = "anyURI")
-	protected String id;
-	@XmlSchemaType(name = "anyURI")
-	protected String url;
-	protected String commonName;
-	protected String versionLabel;
-	protected String description;
-	protected List<CmisExtensionFeatureKeyValuePair> featureData;
-	@XmlAnyElement(lax = true)
-	protected List<Object> any;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "anyURI")
+    protected String id;
+    @XmlSchemaType(name = "anyURI")
+    protected String url;
+    protected String commonName;
+    protected String versionLabel;
+    protected String description;
+    protected List<CmisExtensionFeatureKeyValuePair> featureData;
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
 
-	/**
-	 * Gets the value of the id property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getId() {
-		return id;
-	}
+    /**
+     * Gets the value of the id property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getId() {
+        return id;
+    }
 
-	/**
-	 * Sets the value of the id property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setId(String value) {
-		this.id = value;
-	}
+    /**
+     * Sets the value of the id property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setId(String value) {
+        this.id = value;
+    }
 
-	/**
-	 * Gets the value of the url property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getUrl() {
-		return url;
-	}
+    /**
+     * Gets the value of the url property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUrl() {
+        return url;
+    }
 
-	/**
-	 * Sets the value of the url property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setUrl(String value) {
-		this.url = value;
-	}
+    /**
+     * Sets the value of the url property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUrl(String value) {
+        this.url = value;
+    }
 
-	/**
-	 * Gets the value of the commonName property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCommonName() {
-		return commonName;
-	}
+    /**
+     * Gets the value of the commonName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCommonName() {
+        return commonName;
+    }
 
-	/**
-	 * Sets the value of the commonName property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCommonName(String value) {
-		this.commonName = value;
-	}
+    /**
+     * Sets the value of the commonName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCommonName(String value) {
+        this.commonName = value;
+    }
 
-	/**
-	 * Gets the value of the versionLabel property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getVersionLabel() {
-		return versionLabel;
-	}
+    /**
+     * Gets the value of the versionLabel property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getVersionLabel() {
+        return versionLabel;
+    }
 
-	/**
-	 * Sets the value of the versionLabel property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setVersionLabel(String value) {
-		this.versionLabel = value;
-	}
+    /**
+     * Sets the value of the versionLabel property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setVersionLabel(String value) {
+        this.versionLabel = value;
+    }
 
-	/**
-	 * Gets the value of the description property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getDescription() {
-		return description;
-	}
+    /**
+     * Gets the value of the description property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDescription() {
+        return description;
+    }
 
-	/**
-	 * Sets the value of the description property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setDescription(String value) {
-		this.description = value;
-	}
+    /**
+     * Sets the value of the description property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
 
-	/**
-	 * Gets the value of the featureData property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the featureData property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getFeatureData().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link CmisExtensionFeatureKeyValuePair }
-	 * 
-	 * 
-	 */
-	public List<CmisExtensionFeatureKeyValuePair> getFeatureData() {
-		if (featureData == null) {
-			featureData = new ArrayList<CmisExtensionFeatureKeyValuePair>();
-		}
-		return this.featureData;
-	}
+    /**
+     * Gets the value of the featureData property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the featureData property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFeatureData().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CmisExtensionFeatureKeyValuePair }
+     * 
+     * 
+     */
+    public List<CmisExtensionFeatureKeyValuePair> getFeatureData() {
+        if (featureData == null) {
+            featureData = new ArrayList<CmisExtensionFeatureKeyValuePair>();
+        }
+        return this.featureData;
+    }
 
-	/**
-	 * Gets the value of the any property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the any property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAny().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Element }
-	 * {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<Object>();
-		}
-		return this.any;
-	}
+    /**
+     * Gets the value of the any property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAny().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Object }
+     * {@link Element }
+     * 
+     * 
+     */
+    public List<Object> getAny() {
+        if (any == null) {
+            any = new ArrayList<Object>();
+        }
+        return this.any;
+    }
 
 }

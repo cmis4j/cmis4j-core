@@ -1,16 +1,15 @@
+
 package org.oasis_open.docs.ns.cmis.core._200908;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java class for cmisTypeItemDefinitionType complex type.
+ * <p>Java class for cmisTypeItemDefinitionType complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="cmisTypeItemDefinitionType">
@@ -28,6 +27,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "cmisTypeItemDefinitionType")
-public class CmisTypeItemDefinitionType extends CmisTypeDefinitionType {
+public class CmisTypeItemDefinitionType
+    extends CmisTypeDefinitionType
+{
+
 
 }

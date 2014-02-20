@@ -1,18 +1,16 @@
+
 package org.oasis_open.docs.ns.cmis.core._200908;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java class for enumPropertiesRelationship.
+ * <p>Java class for enumPropertiesRelationship.
  * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * 
  * <pre>
  * &lt;simpleType name="enumPropertiesRelationship">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
@@ -27,26 +25,27 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum EnumPropertiesRelationship {
 
-	@XmlEnumValue("cmis:sourceId")
-	CMIS_SOURCE_ID("cmis:sourceId"), @XmlEnumValue("cmis:targetId")
-	CMIS_TARGET_ID("cmis:targetId");
-	private final String value;
+    @XmlEnumValue("cmis:sourceId")
+    CMIS_SOURCE_ID("cmis:sourceId"),
+    @XmlEnumValue("cmis:targetId")
+    CMIS_TARGET_ID("cmis:targetId");
+    private final String value;
 
-	EnumPropertiesRelationship(String v) {
-		value = v;
-	}
+    EnumPropertiesRelationship(String v) {
+        value = v;
+    }
 
-	public String value() {
-		return value;
-	}
+    public String value() {
+        return value;
+    }
 
-	public static EnumPropertiesRelationship fromValue(String v) {
-		for (EnumPropertiesRelationship c : EnumPropertiesRelationship.values()) {
-			if (c.value.equals(v)) {
-				return c;
-			}
-		}
-		throw new IllegalArgumentException(v);
-	}
+    public static EnumPropertiesRelationship fromValue(String v) {
+        for (EnumPropertiesRelationship c: EnumPropertiesRelationship.values()) {
+            if (c.value.equals(v)) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
 
 }

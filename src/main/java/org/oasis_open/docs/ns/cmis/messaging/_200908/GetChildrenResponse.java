@@ -1,3 +1,4 @@
+
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -6,13 +7,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -29,32 +28,37 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "objects" })
+@XmlType(name = "", propOrder = {
+    "objects"
+})
 @XmlRootElement(name = "getChildrenResponse")
 public class GetChildrenResponse {
 
-	@XmlElement(required = true)
-	protected CmisObjectInFolderListType objects;
+    @XmlElement(required = true)
+    protected CmisObjectInFolderListType objects;
 
-	/**
-	 * Gets the value of the objects property.
-	 * 
-	 * @return possible object is {@link CmisObjectInFolderListType }
-	 * 
-	 */
-	public CmisObjectInFolderListType getObjects() {
-		return objects;
-	}
+    /**
+     * Gets the value of the objects property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CmisObjectInFolderListType }
+     *     
+     */
+    public CmisObjectInFolderListType getObjects() {
+        return objects;
+    }
 
-	/**
-	 * Sets the value of the objects property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link CmisObjectInFolderListType }
-	 * 
-	 */
-	public void setObjects(CmisObjectInFolderListType value) {
-		this.objects = value;
-	}
+    /**
+     * Sets the value of the objects property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CmisObjectInFolderListType }
+     *     
+     */
+    public void setObjects(CmisObjectInFolderListType value) {
+        this.objects = value;
+    }
 
 }

@@ -1,3 +1,4 @@
+
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -5,16 +6,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 import org.oasis_open.docs.ns.cmis.core._200908.CmisAllowableActionsType;
 
+
 /**
- * <p>
- * Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -31,32 +29,37 @@ import org.oasis_open.docs.ns.cmis.core._200908.CmisAllowableActionsType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "allowableActions" })
+@XmlType(name = "", propOrder = {
+    "allowableActions"
+})
 @XmlRootElement(name = "getAllowableActionsResponse")
 public class GetAllowableActionsResponse {
 
-	@XmlElement(required = true)
-	protected CmisAllowableActionsType allowableActions;
+    @XmlElement(required = true)
+    protected CmisAllowableActionsType allowableActions;
 
-	/**
-	 * Gets the value of the allowableActions property.
-	 * 
-	 * @return possible object is {@link CmisAllowableActionsType }
-	 * 
-	 */
-	public CmisAllowableActionsType getAllowableActions() {
-		return allowableActions;
-	}
+    /**
+     * Gets the value of the allowableActions property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CmisAllowableActionsType }
+     *     
+     */
+    public CmisAllowableActionsType getAllowableActions() {
+        return allowableActions;
+    }
 
-	/**
-	 * Sets the value of the allowableActions property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link CmisAllowableActionsType }
-	 * 
-	 */
-	public void setAllowableActions(CmisAllowableActionsType value) {
-		this.allowableActions = value;
-	}
+    /**
+     * Sets the value of the allowableActions property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CmisAllowableActionsType }
+     *     
+     */
+    public void setAllowableActions(CmisAllowableActionsType value) {
+        this.allowableActions = value;
+    }
 
 }

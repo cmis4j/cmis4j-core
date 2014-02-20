@@ -1,18 +1,16 @@
+
 package org.oasis_open.docs.ns.cmis.core._200908;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java class for enumContentStreamAllowed.
+ * <p>Java class for enumContentStreamAllowed.
  * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * 
  * <pre>
  * &lt;simpleType name="enumContentStreamAllowed">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
@@ -28,27 +26,29 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum EnumContentStreamAllowed {
 
-	@XmlEnumValue("notallowed")
-	NOTALLOWED("notallowed"), @XmlEnumValue("allowed")
-	ALLOWED("allowed"), @XmlEnumValue("required")
-	REQUIRED("required");
-	private final String value;
+    @XmlEnumValue("notallowed")
+    NOTALLOWED("notallowed"),
+    @XmlEnumValue("allowed")
+    ALLOWED("allowed"),
+    @XmlEnumValue("required")
+    REQUIRED("required");
+    private final String value;
 
-	EnumContentStreamAllowed(String v) {
-		value = v;
-	}
+    EnumContentStreamAllowed(String v) {
+        value = v;
+    }
 
-	public String value() {
-		return value;
-	}
+    public String value() {
+        return value;
+    }
 
-	public static EnumContentStreamAllowed fromValue(String v) {
-		for (EnumContentStreamAllowed c : EnumContentStreamAllowed.values()) {
-			if (c.value.equals(v)) {
-				return c;
-			}
-		}
-		throw new IllegalArgumentException(v);
-	}
+    public static EnumContentStreamAllowed fromValue(String v) {
+        for (EnumContentStreamAllowed c: EnumContentStreamAllowed.values()) {
+            if (c.value.equals(v)) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
 
 }

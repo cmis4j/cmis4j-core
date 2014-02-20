@@ -1,10 +1,10 @@
+
 package org.oasis_open.docs.ns.cmis.core._200908;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyAttribute;
@@ -15,16 +15,13 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
-
 import org.w3c.dom.Element;
 
+
 /**
- * <p>
- * Java class for cmisTypeDefinitionType complex type.
+ * <p>Java class for cmisTypeDefinitionType complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="cmisTypeDefinitionType">
@@ -69,440 +66,484 @@ import org.w3c.dom.Element;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cmisTypeDefinitionType", propOrder = { "id", "localName",
-		"localNamespace", "displayName", "queryName", "description", "baseId",
-		"parentId", "creatable", "fileable", "queryable", "fulltextIndexed",
-		"includedInSupertypeQuery", "controllablePolicy", "controllableACL",
-		"typeMutability", "propertyDefinition", "any" })
-@XmlSeeAlso({ CmisTypeItemDefinitionType.class,
-		CmisTypeSecondaryDefinitionType.class,
-		CmisTypeFolderDefinitionType.class,
-		CmisTypeDocumentDefinitionType.class,
-		CmisTypeRelationshipDefinitionType.class,
-		CmisTypePolicyDefinitionType.class })
+@XmlType(name = "cmisTypeDefinitionType", propOrder = {
+    "id",
+    "localName",
+    "localNamespace",
+    "displayName",
+    "queryName",
+    "description",
+    "baseId",
+    "parentId",
+    "creatable",
+    "fileable",
+    "queryable",
+    "fulltextIndexed",
+    "includedInSupertypeQuery",
+    "controllablePolicy",
+    "controllableACL",
+    "typeMutability",
+    "propertyDefinition",
+    "any"
+})
+@XmlSeeAlso({
+    CmisTypeItemDefinitionType.class,
+    CmisTypeSecondaryDefinitionType.class,
+    CmisTypeFolderDefinitionType.class,
+    CmisTypeDocumentDefinitionType.class,
+    CmisTypeRelationshipDefinitionType.class,
+    CmisTypePolicyDefinitionType.class
+})
 public class CmisTypeDefinitionType {
 
-	@XmlElement(required = true)
-	protected String id;
-	@XmlElement(required = true)
-	protected String localName;
-	@XmlElement(required = true, nillable = true)
-	@XmlSchemaType(name = "anyURI")
-	protected String localNamespace;
-	protected String displayName;
-	protected String queryName;
-	protected String description;
-	@XmlElement(required = true)
-	protected EnumBaseObjectTypeIds baseId;
-	protected String parentId;
-	protected boolean creatable;
-	protected boolean fileable;
-	protected boolean queryable;
-	protected boolean fulltextIndexed;
-	@XmlElement(defaultValue = "true")
-	protected boolean includedInSupertypeQuery;
-	protected boolean controllablePolicy;
-	protected boolean controllableACL;
-	protected CmisTypeMutabilityCapabilitiesType typeMutability;
-	@XmlElements({
-			@XmlElement(name = "propertyBooleanDefinition", type = CmisPropertyBooleanDefinitionType.class),
-			@XmlElement(name = "propertyDateTimeDefinition", type = CmisPropertyDateTimeDefinitionType.class),
-			@XmlElement(name = "propertyDecimalDefinition", type = CmisPropertyDecimalDefinitionType.class),
-			@XmlElement(name = "propertyIdDefinition", type = CmisPropertyIdDefinitionType.class),
-			@XmlElement(name = "propertyIntegerDefinition", type = CmisPropertyIntegerDefinitionType.class),
-			@XmlElement(name = "propertyHtmlDefinition", type = CmisPropertyHtmlDefinitionType.class),
-			@XmlElement(name = "propertyStringDefinition", type = CmisPropertyStringDefinitionType.class),
-			@XmlElement(name = "propertyUriDefinition", type = CmisPropertyUriDefinitionType.class) })
-	protected List<CmisPropertyDefinitionType> propertyDefinition;
-	@XmlAnyElement(lax = true)
-	protected List<Object> any;
-	@XmlAnyAttribute
-	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    @XmlElement(required = true)
+    protected String id;
+    @XmlElement(required = true)
+    protected String localName;
+    @XmlElement(required = true, nillable = true)
+    @XmlSchemaType(name = "anyURI")
+    protected String localNamespace;
+    protected String displayName;
+    protected String queryName;
+    protected String description;
+    @XmlElement(required = true)
+    protected EnumBaseObjectTypeIds baseId;
+    protected String parentId;
+    protected boolean creatable;
+    protected boolean fileable;
+    protected boolean queryable;
+    protected boolean fulltextIndexed;
+    @XmlElement(defaultValue = "true")
+    protected boolean includedInSupertypeQuery;
+    protected boolean controllablePolicy;
+    protected boolean controllableACL;
+    protected CmisTypeMutabilityCapabilitiesType typeMutability;
+    @XmlElements({
+        @XmlElement(name = "propertyBooleanDefinition", type = CmisPropertyBooleanDefinitionType.class),
+        @XmlElement(name = "propertyDateTimeDefinition", type = CmisPropertyDateTimeDefinitionType.class),
+        @XmlElement(name = "propertyDecimalDefinition", type = CmisPropertyDecimalDefinitionType.class),
+        @XmlElement(name = "propertyIdDefinition", type = CmisPropertyIdDefinitionType.class),
+        @XmlElement(name = "propertyIntegerDefinition", type = CmisPropertyIntegerDefinitionType.class),
+        @XmlElement(name = "propertyHtmlDefinition", type = CmisPropertyHtmlDefinitionType.class),
+        @XmlElement(name = "propertyStringDefinition", type = CmisPropertyStringDefinitionType.class),
+        @XmlElement(name = "propertyUriDefinition", type = CmisPropertyUriDefinitionType.class)
+    })
+    protected List<CmisPropertyDefinitionType> propertyDefinition;
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
+    @XmlAnyAttribute
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
-	/**
-	 * Gets the value of the id property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getId() {
-		return id;
-	}
+    /**
+     * Gets the value of the id property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getId() {
+        return id;
+    }
 
-	/**
-	 * Sets the value of the id property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setId(String value) {
-		this.id = value;
-	}
+    /**
+     * Sets the value of the id property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setId(String value) {
+        this.id = value;
+    }
 
-	/**
-	 * Gets the value of the localName property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getLocalName() {
-		return localName;
-	}
+    /**
+     * Gets the value of the localName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLocalName() {
+        return localName;
+    }
 
-	/**
-	 * Sets the value of the localName property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setLocalName(String value) {
-		this.localName = value;
-	}
+    /**
+     * Sets the value of the localName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLocalName(String value) {
+        this.localName = value;
+    }
 
-	/**
-	 * Gets the value of the localNamespace property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getLocalNamespace() {
-		return localNamespace;
-	}
+    /**
+     * Gets the value of the localNamespace property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLocalNamespace() {
+        return localNamespace;
+    }
 
-	/**
-	 * Sets the value of the localNamespace property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setLocalNamespace(String value) {
-		this.localNamespace = value;
-	}
+    /**
+     * Sets the value of the localNamespace property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLocalNamespace(String value) {
+        this.localNamespace = value;
+    }
 
-	/**
-	 * Gets the value of the displayName property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getDisplayName() {
-		return displayName;
-	}
+    /**
+     * Gets the value of the displayName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDisplayName() {
+        return displayName;
+    }
 
-	/**
-	 * Sets the value of the displayName property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setDisplayName(String value) {
-		this.displayName = value;
-	}
+    /**
+     * Sets the value of the displayName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDisplayName(String value) {
+        this.displayName = value;
+    }
 
-	/**
-	 * Gets the value of the queryName property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getQueryName() {
-		return queryName;
-	}
+    /**
+     * Gets the value of the queryName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getQueryName() {
+        return queryName;
+    }
 
-	/**
-	 * Sets the value of the queryName property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setQueryName(String value) {
-		this.queryName = value;
-	}
+    /**
+     * Sets the value of the queryName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setQueryName(String value) {
+        this.queryName = value;
+    }
 
-	/**
-	 * Gets the value of the description property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getDescription() {
-		return description;
-	}
+    /**
+     * Gets the value of the description property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDescription() {
+        return description;
+    }
 
-	/**
-	 * Sets the value of the description property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setDescription(String value) {
-		this.description = value;
-	}
+    /**
+     * Sets the value of the description property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
 
-	/**
-	 * Gets the value of the baseId property.
-	 * 
-	 * @return possible object is {@link EnumBaseObjectTypeIds }
-	 * 
-	 */
-	public EnumBaseObjectTypeIds getBaseId() {
-		return baseId;
-	}
+    /**
+     * Gets the value of the baseId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link EnumBaseObjectTypeIds }
+     *     
+     */
+    public EnumBaseObjectTypeIds getBaseId() {
+        return baseId;
+    }
 
-	/**
-	 * Sets the value of the baseId property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link EnumBaseObjectTypeIds }
-	 * 
-	 */
-	public void setBaseId(EnumBaseObjectTypeIds value) {
-		this.baseId = value;
-	}
+    /**
+     * Sets the value of the baseId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link EnumBaseObjectTypeIds }
+     *     
+     */
+    public void setBaseId(EnumBaseObjectTypeIds value) {
+        this.baseId = value;
+    }
 
-	/**
-	 * Gets the value of the parentId property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getParentId() {
-		return parentId;
-	}
+    /**
+     * Gets the value of the parentId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getParentId() {
+        return parentId;
+    }
 
-	/**
-	 * Sets the value of the parentId property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setParentId(String value) {
-		this.parentId = value;
-	}
+    /**
+     * Sets the value of the parentId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setParentId(String value) {
+        this.parentId = value;
+    }
 
-	/**
-	 * Gets the value of the creatable property.
-	 * 
-	 */
-	public boolean isCreatable() {
-		return creatable;
-	}
+    /**
+     * Gets the value of the creatable property.
+     * 
+     */
+    public boolean isCreatable() {
+        return creatable;
+    }
 
-	/**
-	 * Sets the value of the creatable property.
-	 * 
-	 */
-	public void setCreatable(boolean value) {
-		this.creatable = value;
-	}
+    /**
+     * Sets the value of the creatable property.
+     * 
+     */
+    public void setCreatable(boolean value) {
+        this.creatable = value;
+    }
 
-	/**
-	 * Gets the value of the fileable property.
-	 * 
-	 */
-	public boolean isFileable() {
-		return fileable;
-	}
+    /**
+     * Gets the value of the fileable property.
+     * 
+     */
+    public boolean isFileable() {
+        return fileable;
+    }
 
-	/**
-	 * Sets the value of the fileable property.
-	 * 
-	 */
-	public void setFileable(boolean value) {
-		this.fileable = value;
-	}
+    /**
+     * Sets the value of the fileable property.
+     * 
+     */
+    public void setFileable(boolean value) {
+        this.fileable = value;
+    }
 
-	/**
-	 * Gets the value of the queryable property.
-	 * 
-	 */
-	public boolean isQueryable() {
-		return queryable;
-	}
+    /**
+     * Gets the value of the queryable property.
+     * 
+     */
+    public boolean isQueryable() {
+        return queryable;
+    }
 
-	/**
-	 * Sets the value of the queryable property.
-	 * 
-	 */
-	public void setQueryable(boolean value) {
-		this.queryable = value;
-	}
+    /**
+     * Sets the value of the queryable property.
+     * 
+     */
+    public void setQueryable(boolean value) {
+        this.queryable = value;
+    }
 
-	/**
-	 * Gets the value of the fulltextIndexed property.
-	 * 
-	 */
-	public boolean isFulltextIndexed() {
-		return fulltextIndexed;
-	}
+    /**
+     * Gets the value of the fulltextIndexed property.
+     * 
+     */
+    public boolean isFulltextIndexed() {
+        return fulltextIndexed;
+    }
 
-	/**
-	 * Sets the value of the fulltextIndexed property.
-	 * 
-	 */
-	public void setFulltextIndexed(boolean value) {
-		this.fulltextIndexed = value;
-	}
+    /**
+     * Sets the value of the fulltextIndexed property.
+     * 
+     */
+    public void setFulltextIndexed(boolean value) {
+        this.fulltextIndexed = value;
+    }
 
-	/**
-	 * Gets the value of the includedInSupertypeQuery property.
-	 * 
-	 */
-	public boolean isIncludedInSupertypeQuery() {
-		return includedInSupertypeQuery;
-	}
+    /**
+     * Gets the value of the includedInSupertypeQuery property.
+     * 
+     */
+    public boolean isIncludedInSupertypeQuery() {
+        return includedInSupertypeQuery;
+    }
 
-	/**
-	 * Sets the value of the includedInSupertypeQuery property.
-	 * 
-	 */
-	public void setIncludedInSupertypeQuery(boolean value) {
-		this.includedInSupertypeQuery = value;
-	}
+    /**
+     * Sets the value of the includedInSupertypeQuery property.
+     * 
+     */
+    public void setIncludedInSupertypeQuery(boolean value) {
+        this.includedInSupertypeQuery = value;
+    }
 
-	/**
-	 * Gets the value of the controllablePolicy property.
-	 * 
-	 */
-	public boolean isControllablePolicy() {
-		return controllablePolicy;
-	}
+    /**
+     * Gets the value of the controllablePolicy property.
+     * 
+     */
+    public boolean isControllablePolicy() {
+        return controllablePolicy;
+    }
 
-	/**
-	 * Sets the value of the controllablePolicy property.
-	 * 
-	 */
-	public void setControllablePolicy(boolean value) {
-		this.controllablePolicy = value;
-	}
+    /**
+     * Sets the value of the controllablePolicy property.
+     * 
+     */
+    public void setControllablePolicy(boolean value) {
+        this.controllablePolicy = value;
+    }
 
-	/**
-	 * Gets the value of the controllableACL property.
-	 * 
-	 */
-	public boolean isControllableACL() {
-		return controllableACL;
-	}
+    /**
+     * Gets the value of the controllableACL property.
+     * 
+     */
+    public boolean isControllableACL() {
+        return controllableACL;
+    }
 
-	/**
-	 * Sets the value of the controllableACL property.
-	 * 
-	 */
-	public void setControllableACL(boolean value) {
-		this.controllableACL = value;
-	}
+    /**
+     * Sets the value of the controllableACL property.
+     * 
+     */
+    public void setControllableACL(boolean value) {
+        this.controllableACL = value;
+    }
 
-	/**
-	 * Gets the value of the typeMutability property.
-	 * 
-	 * @return possible object is {@link CmisTypeMutabilityCapabilitiesType }
-	 * 
-	 */
-	public CmisTypeMutabilityCapabilitiesType getTypeMutability() {
-		return typeMutability;
-	}
+    /**
+     * Gets the value of the typeMutability property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CmisTypeMutabilityCapabilitiesType }
+     *     
+     */
+    public CmisTypeMutabilityCapabilitiesType getTypeMutability() {
+        return typeMutability;
+    }
 
-	/**
-	 * Sets the value of the typeMutability property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link CmisTypeMutabilityCapabilitiesType }
-	 * 
-	 */
-	public void setTypeMutability(CmisTypeMutabilityCapabilitiesType value) {
-		this.typeMutability = value;
-	}
+    /**
+     * Sets the value of the typeMutability property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CmisTypeMutabilityCapabilitiesType }
+     *     
+     */
+    public void setTypeMutability(CmisTypeMutabilityCapabilitiesType value) {
+        this.typeMutability = value;
+    }
 
-	/**
-	 * Gets the value of the propertyDefinition property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the propertyDefinition property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getPropertyDefinition().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link CmisPropertyBooleanDefinitionType }
-	 * {@link CmisPropertyDateTimeDefinitionType }
-	 * {@link CmisPropertyDecimalDefinitionType }
-	 * {@link CmisPropertyIdDefinitionType }
-	 * {@link CmisPropertyIntegerDefinitionType }
-	 * {@link CmisPropertyHtmlDefinitionType }
-	 * {@link CmisPropertyStringDefinitionType }
-	 * {@link CmisPropertyUriDefinitionType }
-	 * 
-	 * 
-	 */
-	public List<CmisPropertyDefinitionType> getPropertyDefinition() {
-		if (propertyDefinition == null) {
-			propertyDefinition = new ArrayList<CmisPropertyDefinitionType>();
-		}
-		return this.propertyDefinition;
-	}
+    /**
+     * Gets the value of the propertyDefinition property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the propertyDefinition property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPropertyDefinition().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CmisPropertyBooleanDefinitionType }
+     * {@link CmisPropertyDateTimeDefinitionType }
+     * {@link CmisPropertyDecimalDefinitionType }
+     * {@link CmisPropertyIdDefinitionType }
+     * {@link CmisPropertyIntegerDefinitionType }
+     * {@link CmisPropertyHtmlDefinitionType }
+     * {@link CmisPropertyStringDefinitionType }
+     * {@link CmisPropertyUriDefinitionType }
+     * 
+     * 
+     */
+    public List<CmisPropertyDefinitionType> getPropertyDefinition() {
+        if (propertyDefinition == null) {
+            propertyDefinition = new ArrayList<CmisPropertyDefinitionType>();
+        }
+        return this.propertyDefinition;
+    }
 
-	/**
-	 * Gets the value of the any property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the any property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAny().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Element }
-	 * {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<Object>();
-		}
-		return this.any;
-	}
+    /**
+     * Gets the value of the any property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAny().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Object }
+     * {@link Element }
+     * 
+     * 
+     */
+    public List<Object> getAny() {
+        if (any == null) {
+            any = new ArrayList<Object>();
+        }
+        return this.any;
+    }
 
-	/**
-	 * Gets a map that contains attributes that aren't bound to any typed
-	 * property on this class.
-	 * 
-	 * <p>
-	 * the map is keyed by the name of the attribute and the value is the string
-	 * value of the attribute.
-	 * 
-	 * the map returned by this method is live, and you can add new attribute by
-	 * updating the map directly. Because of this design, there's no setter.
-	 * 
-	 * 
-	 * @return always non-null
-	 */
-	public Map<QName, String> getOtherAttributes() {
-		return otherAttributes;
-	}
+    /**
+     * Gets a map that contains attributes that aren't bound to any typed property on this class.
+     * 
+     * <p>
+     * the map is keyed by the name of the attribute and 
+     * the value is the string value of the attribute.
+     * 
+     * the map returned by this method is live, and you can add new attribute
+     * by updating the map directly. Because of this design, there's no setter.
+     * 
+     * 
+     * @return
+     *     always non-null
+     */
+    public Map<QName, String> getOtherAttributes() {
+        return otherAttributes;
+    }
 
 }

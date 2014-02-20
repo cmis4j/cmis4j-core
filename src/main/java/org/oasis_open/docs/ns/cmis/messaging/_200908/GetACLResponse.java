@@ -1,3 +1,4 @@
+
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -6,13 +7,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
- * <p>
- * Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -29,32 +28,37 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "acl" })
+@XmlType(name = "", propOrder = {
+    "acl"
+})
 @XmlRootElement(name = "getACLResponse")
 public class GetACLResponse {
 
-	@XmlElement(name = "ACL", required = true)
-	protected CmisACLType acl;
+    @XmlElement(name = "ACL", required = true)
+    protected CmisACLType acl;
 
-	/**
-	 * Gets the value of the acl property.
-	 * 
-	 * @return possible object is {@link CmisACLType }
-	 * 
-	 */
-	public CmisACLType getACL() {
-		return acl;
-	}
+    /**
+     * Gets the value of the acl property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CmisACLType }
+     *     
+     */
+    public CmisACLType getACL() {
+        return acl;
+    }
 
-	/**
-	 * Sets the value of the acl property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link CmisACLType }
-	 * 
-	 */
-	public void setACL(CmisACLType value) {
-		this.acl = value;
-	}
+    /**
+     * Sets the value of the acl property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CmisACLType }
+     *     
+     */
+    public void setACL(CmisACLType value) {
+        this.acl = value;
+    }
 
 }

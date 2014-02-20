@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.cmis4j</groupId>
+	<groupId>com.github.cmis4j</groupId>
 	<artifactId>cmis4j-core</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -16,19 +16,19 @@
 	<inceptionYear>2014</inceptionYear>
 	<organization>
 		<name>cmis4j</name>
-		<url>http://www.cmis4j.org</url>
+		<url>https://github.com/cmis4j</url>
 	</organization>
 	<developers>
 		<developer>
-			<name>ggbusto</name>
-			<email>ggbusto@gmx.us</email>
+			<name>ggbusto@gmx.com</name>
+			<email>ggbusto@gmx.com</email>
 		</developer>
 	</developers>
 	<licenses>
 		<license>
 			<name>The MIT License (MIT)</name>
 			<url>http://opensource.org/licenses/MIT</url>
-			<comments>Copyright (c) 2014 by ggbusto</comments>
+			<comments>Copyright (c) 2014 by ggbusto@gmx.com</comments>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -140,9 +140,11 @@
 									<wsdlOptions>
 										<wsdlOption>
 											<wsdl>${basedir}/src/main/resources/CMISWS-Service.wsdl</wsdl>
+											<!--
 											<extraargs>
 												<extraarg>-impl</extraarg>
 											</extraargs>
+											-->
 										</wsdlOption>
 									</wsdlOptions>
 								</configuration>

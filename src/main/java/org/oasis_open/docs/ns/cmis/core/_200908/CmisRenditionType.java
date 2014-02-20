@@ -1,24 +1,21 @@
+
 package org.oasis_open.docs.ns.cmis.core._200908;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-
 import org.w3c.dom.Element;
 
+
 /**
- * <p>
- * Java class for cmisRenditionType complex type.
+ * <p>Java class for cmisRenditionType complex type.
  * 
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="cmisRenditionType">
@@ -43,222 +40,254 @@ import org.w3c.dom.Element;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cmisRenditionType", propOrder = { "streamId", "mimetype",
-		"length", "kind", "title", "height", "width", "renditionDocumentId",
-		"any" })
+@XmlType(name = "cmisRenditionType", propOrder = {
+    "streamId",
+    "mimetype",
+    "length",
+    "kind",
+    "title",
+    "height",
+    "width",
+    "renditionDocumentId",
+    "any"
+})
 public class CmisRenditionType {
 
-	@XmlElement(required = true)
-	protected String streamId;
-	@XmlElement(required = true)
-	protected String mimetype;
-	@XmlElement(required = true)
-	protected BigInteger length;
-	@XmlElement(required = true)
-	protected String kind;
-	protected String title;
-	protected BigInteger height;
-	protected BigInteger width;
-	protected String renditionDocumentId;
-	@XmlAnyElement(lax = true)
-	protected List<Object> any;
+    @XmlElement(required = true)
+    protected String streamId;
+    @XmlElement(required = true)
+    protected String mimetype;
+    @XmlElement(required = true)
+    protected BigInteger length;
+    @XmlElement(required = true)
+    protected String kind;
+    protected String title;
+    protected BigInteger height;
+    protected BigInteger width;
+    protected String renditionDocumentId;
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
 
-	/**
-	 * Gets the value of the streamId property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getStreamId() {
-		return streamId;
-	}
+    /**
+     * Gets the value of the streamId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getStreamId() {
+        return streamId;
+    }
 
-	/**
-	 * Sets the value of the streamId property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setStreamId(String value) {
-		this.streamId = value;
-	}
+    /**
+     * Sets the value of the streamId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setStreamId(String value) {
+        this.streamId = value;
+    }
 
-	/**
-	 * Gets the value of the mimetype property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getMimetype() {
-		return mimetype;
-	}
+    /**
+     * Gets the value of the mimetype property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMimetype() {
+        return mimetype;
+    }
 
-	/**
-	 * Sets the value of the mimetype property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setMimetype(String value) {
-		this.mimetype = value;
-	}
+    /**
+     * Sets the value of the mimetype property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMimetype(String value) {
+        this.mimetype = value;
+    }
 
-	/**
-	 * Gets the value of the length property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getLength() {
-		return length;
-	}
+    /**
+     * Gets the value of the length property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getLength() {
+        return length;
+    }
 
-	/**
-	 * Sets the value of the length property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setLength(BigInteger value) {
-		this.length = value;
-	}
+    /**
+     * Sets the value of the length property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setLength(BigInteger value) {
+        this.length = value;
+    }
 
-	/**
-	 * Gets the value of the kind property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getKind() {
-		return kind;
-	}
+    /**
+     * Gets the value of the kind property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getKind() {
+        return kind;
+    }
 
-	/**
-	 * Sets the value of the kind property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setKind(String value) {
-		this.kind = value;
-	}
+    /**
+     * Sets the value of the kind property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setKind(String value) {
+        this.kind = value;
+    }
 
-	/**
-	 * Gets the value of the title property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getTitle() {
-		return title;
-	}
+    /**
+     * Gets the value of the title property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTitle() {
+        return title;
+    }
 
-	/**
-	 * Sets the value of the title property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setTitle(String value) {
-		this.title = value;
-	}
+    /**
+     * Sets the value of the title property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTitle(String value) {
+        this.title = value;
+    }
 
-	/**
-	 * Gets the value of the height property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getHeight() {
-		return height;
-	}
+    /**
+     * Gets the value of the height property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getHeight() {
+        return height;
+    }
 
-	/**
-	 * Sets the value of the height property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setHeight(BigInteger value) {
-		this.height = value;
-	}
+    /**
+     * Sets the value of the height property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setHeight(BigInteger value) {
+        this.height = value;
+    }
 
-	/**
-	 * Gets the value of the width property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getWidth() {
-		return width;
-	}
+    /**
+     * Gets the value of the width property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getWidth() {
+        return width;
+    }
 
-	/**
-	 * Sets the value of the width property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setWidth(BigInteger value) {
-		this.width = value;
-	}
+    /**
+     * Sets the value of the width property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setWidth(BigInteger value) {
+        this.width = value;
+    }
 
-	/**
-	 * Gets the value of the renditionDocumentId property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getRenditionDocumentId() {
-		return renditionDocumentId;
-	}
+    /**
+     * Gets the value of the renditionDocumentId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRenditionDocumentId() {
+        return renditionDocumentId;
+    }
 
-	/**
-	 * Sets the value of the renditionDocumentId property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setRenditionDocumentId(String value) {
-		this.renditionDocumentId = value;
-	}
+    /**
+     * Sets the value of the renditionDocumentId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRenditionDocumentId(String value) {
+        this.renditionDocumentId = value;
+    }
 
-	/**
-	 * Gets the value of the any property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the any property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getAny().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Element }
-	 * {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<Object>();
-		}
-		return this.any;
-	}
+    /**
+     * Gets the value of the any property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAny().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Object }
+     * {@link Element }
+     * 
+     * 
+     */
+    public List<Object> getAny() {
+        if (any == null) {
+            any = new ArrayList<Object>();
+        }
+        return this.any;
+    }
 
 }
