@@ -34,4 +34,4 @@ Donations
 ---------
 If you find the software useful and would like to make a donation, please send bitcoins to `1ACz6GKw3B6vjoYwGA2hnXDnbR5koFhC4j`.
 
-Copyright &copy; 2014 by ggbusto@gmx.com.
+Copyright &copy; 2013, 2014 by ggbusto@gmx.com.

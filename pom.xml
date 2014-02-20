@@ -13,7 +13,7 @@
 	<name>CMIS Java Core Components</name>
 	<url>http://cmis4j.github.io/cmis4j-core</url>
 	<description>Open source Java core components and interface definitions of cmis4j.</description>
-	<inceptionYear>2014</inceptionYear>
+	<inceptionYear>2013</inceptionYear>
 	<organization>
 		<name>cmis4j</name>
 		<url>https://github.com/cmis4j</url>
@@ -28,7 +28,7 @@
 		<license>
 			<name>The MIT License (MIT)</name>
 			<url>http://opensource.org/licenses/MIT</url>
-			<comments>Copyright (c) 2014 by ggbusto@gmx.com</comments>
+			<comments>Copyright (c) 2013, 2014 by ggbusto@gmx.com</comments>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
