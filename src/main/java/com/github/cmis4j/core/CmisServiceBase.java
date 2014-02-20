@@ -44,7 +44,7 @@ import org.oasis_open.docs.ns.cmis.ws._200908.RepositoryServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.VersioningServicePort;
 
 @WebService(targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/")
-public abstract class CmisService implements ACLServicePort,
+public abstract class CmisServiceBase implements ACLServicePort,
 		DiscoveryServicePort, MultiFilingServicePort, NavigationServicePort,
 		ObjectServicePort, PolicyServicePort, RelationshipServicePort,
 		RepositoryServicePort, VersioningServicePort {
