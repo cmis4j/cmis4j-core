@@ -27,7 +27,6 @@ package com.github.cmis4j.core;
 import java.math.BigInteger;
 
 import javax.annotation.Resource;
-import javax.jws.WebService;
 import javax.xml.ws.WebServiceContext;
 
 import org.oasis_open.docs.ns.cmis.messaging._200908.CmisFaultType;
@@ -43,7 +42,6 @@ import org.oasis_open.docs.ns.cmis.ws._200908.RelationshipServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.RepositoryServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.VersioningServicePort;
 
-@WebService(targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/")
 public abstract class CmisServiceBase implements ACLServicePort,
 		DiscoveryServicePort, MultiFilingServicePort, NavigationServicePort,
 		ObjectServicePort, PolicyServicePort, RelationshipServicePort,
