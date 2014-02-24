@@ -1,4 +1,3 @@
-
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import java.math.BigInteger;
@@ -11,11 +10,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.oasis_open.docs.ns.cmis.core._200908.EnumIncludeRelationships;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -40,253 +41,233 @@ import org.oasis_open.docs.ns.cmis.core._200908.EnumIncludeRelationships;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "repositoryId",
-    "folderId",
-    "depth",
-    "filter",
-    "includeAllowableActions",
-    "includeRelationships",
-    "renditionFilter",
-    "includePathSegment",
-    "extension"
-})
+@XmlType(name = "", propOrder = { "repositoryId", "folderId", "depth",
+		"filter", "includeAllowableActions", "includeRelationships",
+		"renditionFilter", "includePathSegment", "extension" })
 @XmlRootElement(name = "getDescendants")
 public class GetDescendants {
 
-    @XmlElement(required = true)
-    protected String repositoryId;
-    @XmlElement(required = true)
-    protected String folderId;
-    @XmlElementRef(name = "depth", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<BigInteger> depth;
-    @XmlElementRef(name = "filter", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> filter;
-    @XmlElementRef(name = "includeAllowableActions", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<Boolean> includeAllowableActions;
-    @XmlElementRef(name = "includeRelationships", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<EnumIncludeRelationships> includeRelationships;
-    @XmlElementRef(name = "renditionFilter", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> renditionFilter;
-    @XmlElementRef(name = "includePathSegment", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<Boolean> includePathSegment;
-    @XmlElementRef(name = "extension", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<CmisExtensionType> extension;
+	@XmlElement(required = true)
+	protected String repositoryId;
+	@XmlElement(required = true)
+	protected String folderId;
+	@XmlElementRef(name = "depth", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<BigInteger> depth;
+	@XmlElementRef(name = "filter", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<String> filter;
+	@XmlElementRef(name = "includeAllowableActions", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<Boolean> includeAllowableActions;
+	@XmlElementRef(name = "includeRelationships", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<EnumIncludeRelationships> includeRelationships;
+	@XmlElementRef(name = "renditionFilter", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<String> renditionFilter;
+	@XmlElementRef(name = "includePathSegment", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<Boolean> includePathSegment;
+	@XmlElementRef(name = "extension", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<CmisExtensionType> extension;
 
-    /**
-     * Gets the value of the repositoryId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRepositoryId() {
-        return repositoryId;
-    }
+	/**
+	 * Gets the value of the repositoryId property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getRepositoryId() {
+		return repositoryId;
+	}
 
-    /**
-     * Sets the value of the repositoryId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRepositoryId(String value) {
-        this.repositoryId = value;
-    }
+	/**
+	 * Sets the value of the repositoryId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setRepositoryId(String value) {
+		this.repositoryId = value;
+	}
 
-    /**
-     * Gets the value of the folderId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFolderId() {
-        return folderId;
-    }
+	/**
+	 * Gets the value of the folderId property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getFolderId() {
+		return folderId;
+	}
 
-    /**
-     * Sets the value of the folderId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFolderId(String value) {
-        this.folderId = value;
-    }
+	/**
+	 * Sets the value of the folderId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setFolderId(String value) {
+		this.folderId = value;
+	}
 
-    /**
-     * Gets the value of the depth property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     *     
-     */
-    public JAXBElement<BigInteger> getDepth() {
-        return depth;
-    }
+	/**
+	 * Gets the value of the depth property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}{@link BigInteger }
+	 *         {@code >}
+	 * 
+	 */
+	public JAXBElement<BigInteger> getDepth() {
+		return depth;
+	}
 
-    /**
-     * Sets the value of the depth property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     *     
-     */
-    public void setDepth(JAXBElement<BigInteger> value) {
-        this.depth = value;
-    }
+	/**
+	 * Sets the value of the depth property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}
+	 *            {@link BigInteger }{@code >}
+	 * 
+	 */
+	public void setDepth(JAXBElement<BigInteger> value) {
+		this.depth = value;
+	}
 
-    /**
-     * Gets the value of the filter property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
-     */
-    public JAXBElement<String> getFilter() {
-        return filter;
-    }
+	/**
+	 * Gets the value of the filter property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}{@link String }
+	 *         {@code >}
+	 * 
+	 */
+	public JAXBElement<String> getFilter() {
+		return filter;
+	}
 
-    /**
-     * Sets the value of the filter property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
-     */
-    public void setFilter(JAXBElement<String> value) {
-        this.filter = value;
-    }
+	/**
+	 * Sets the value of the filter property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}{@link String }
+	 *            {@code >}
+	 * 
+	 */
+	public void setFilter(JAXBElement<String> value) {
+		this.filter = value;
+	}
 
-    /**
-     * Gets the value of the includeAllowableActions property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     *     
-     */
-    public JAXBElement<Boolean> getIncludeAllowableActions() {
-        return includeAllowableActions;
-    }
+	/**
+	 * Gets the value of the includeAllowableActions property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}{@link Boolean }
+	 *         {@code >}
+	 * 
+	 */
+	public JAXBElement<Boolean> getIncludeAllowableActions() {
+		return includeAllowableActions;
+	}
 
-    /**
-     * Sets the value of the includeAllowableActions property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     *     
-     */
-    public void setIncludeAllowableActions(JAXBElement<Boolean> value) {
-        this.includeAllowableActions = value;
-    }
+	/**
+	 * Sets the value of the includeAllowableActions property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}{@link Boolean }
+	 *            {@code >}
+	 * 
+	 */
+	public void setIncludeAllowableActions(JAXBElement<Boolean> value) {
+		this.includeAllowableActions = value;
+	}
 
-    /**
-     * Gets the value of the includeRelationships property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link EnumIncludeRelationships }{@code >}
-     *     
-     */
-    public JAXBElement<EnumIncludeRelationships> getIncludeRelationships() {
-        return includeRelationships;
-    }
+	/**
+	 * Gets the value of the includeRelationships property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}
+	 *         {@link EnumIncludeRelationships }{@code >}
+	 * 
+	 */
+	public JAXBElement<EnumIncludeRelationships> getIncludeRelationships() {
+		return includeRelationships;
+	}
 
-    /**
-     * Sets the value of the includeRelationships property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link EnumIncludeRelationships }{@code >}
-     *     
-     */
-    public void setIncludeRelationships(JAXBElement<EnumIncludeRelationships> value) {
-        this.includeRelationships = value;
-    }
+	/**
+	 * Sets the value of the includeRelationships property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}
+	 *            {@link EnumIncludeRelationships }{@code >}
+	 * 
+	 */
+	public void setIncludeRelationships(
+			JAXBElement<EnumIncludeRelationships> value) {
+		this.includeRelationships = value;
+	}
 
-    /**
-     * Gets the value of the renditionFilter property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
-     */
-    public JAXBElement<String> getRenditionFilter() {
-        return renditionFilter;
-    }
+	/**
+	 * Gets the value of the renditionFilter property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}{@link String }
+	 *         {@code >}
+	 * 
+	 */
+	public JAXBElement<String> getRenditionFilter() {
+		return renditionFilter;
+	}
 
-    /**
-     * Sets the value of the renditionFilter property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
-     */
-    public void setRenditionFilter(JAXBElement<String> value) {
-        this.renditionFilter = value;
-    }
+	/**
+	 * Sets the value of the renditionFilter property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}{@link String }
+	 *            {@code >}
+	 * 
+	 */
+	public void setRenditionFilter(JAXBElement<String> value) {
+		this.renditionFilter = value;
+	}
 
-    /**
-     * Gets the value of the includePathSegment property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     *     
-     */
-    public JAXBElement<Boolean> getIncludePathSegment() {
-        return includePathSegment;
-    }
+	/**
+	 * Gets the value of the includePathSegment property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}{@link Boolean }
+	 *         {@code >}
+	 * 
+	 */
+	public JAXBElement<Boolean> getIncludePathSegment() {
+		return includePathSegment;
+	}
 
-    /**
-     * Sets the value of the includePathSegment property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     *     
-     */
-    public void setIncludePathSegment(JAXBElement<Boolean> value) {
-        this.includePathSegment = value;
-    }
+	/**
+	 * Sets the value of the includePathSegment property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}{@link Boolean }
+	 *            {@code >}
+	 * 
+	 */
+	public void setIncludePathSegment(JAXBElement<Boolean> value) {
+		this.includePathSegment = value;
+	}
 
-    /**
-     * Gets the value of the extension property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link CmisExtensionType }{@code >}
-     *     
-     */
-    public JAXBElement<CmisExtensionType> getExtension() {
-        return extension;
-    }
+	/**
+	 * Gets the value of the extension property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}
+	 *         {@link CmisExtensionType }{@code >}
+	 * 
+	 */
+	public JAXBElement<CmisExtensionType> getExtension() {
+		return extension;
+	}
 
-    /**
-     * Sets the value of the extension property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link CmisExtensionType }{@code >}
-     *     
-     */
-    public void setExtension(JAXBElement<CmisExtensionType> value) {
-        this.extension = value;
-    }
+	/**
+	 * Sets the value of the extension property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}
+	 *            {@link CmisExtensionType }{@code >}
+	 * 
+	 */
+	public void setExtension(JAXBElement<CmisExtensionType> value) {
+		this.extension = value;
+	}
 
 }

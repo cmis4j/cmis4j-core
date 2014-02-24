@@ -1,4 +1,3 @@
-
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import java.util.ArrayList;
@@ -14,11 +13,13 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
 import org.w3c.dom.Element;
 
-
 /**
- * <p>Java class for cmisObjectInFolderContainerType complex type.
+ * <p>
+ * Java class for cmisObjectInFolderContainerType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="cmisObjectInFolderContainerType">
@@ -40,119 +41,114 @@ import org.w3c.dom.Element;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "cmisObjectInFolderContainerType", propOrder = {
-    "objectInFolder",
-    "children",
-    "any"
-})
+		"objectInFolder", "children", "any" })
 public class CmisObjectInFolderContainerType {
 
-    @XmlElement(required = true)
-    protected CmisObjectInFolderType objectInFolder;
-    protected List<CmisObjectInFolderContainerType> children;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
-    @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+	@XmlElement(required = true)
+	protected CmisObjectInFolderType objectInFolder;
+	protected List<CmisObjectInFolderContainerType> children;
+	@XmlAnyElement(lax = true)
+	protected List<Object> any;
+	@XmlAnyAttribute
+	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
-    /**
-     * Gets the value of the objectInFolder property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CmisObjectInFolderType }
-     *     
-     */
-    public CmisObjectInFolderType getObjectInFolder() {
-        return objectInFolder;
-    }
+	/**
+	 * Gets the value of the objectInFolder property.
+	 * 
+	 * @return possible object is {@link CmisObjectInFolderType }
+	 * 
+	 */
+	public CmisObjectInFolderType getObjectInFolder() {
+		return objectInFolder;
+	}
 
-    /**
-     * Sets the value of the objectInFolder property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CmisObjectInFolderType }
-     *     
-     */
-    public void setObjectInFolder(CmisObjectInFolderType value) {
-        this.objectInFolder = value;
-    }
+	/**
+	 * Sets the value of the objectInFolder property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link CmisObjectInFolderType }
+	 * 
+	 */
+	public void setObjectInFolder(CmisObjectInFolderType value) {
+		this.objectInFolder = value;
+	}
 
-    /**
-     * Gets the value of the children property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the children property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getChildren().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CmisObjectInFolderContainerType }
-     * 
-     * 
-     */
-    public List<CmisObjectInFolderContainerType> getChildren() {
-        if (children == null) {
-            children = new ArrayList<CmisObjectInFolderContainerType>();
-        }
-        return this.children;
-    }
+	/**
+	 * Gets the value of the children property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the children property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getChildren().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link CmisObjectInFolderContainerType }
+	 * 
+	 * 
+	 */
+	public List<CmisObjectInFolderContainerType> getChildren() {
+		if (children == null) {
+			children = new ArrayList<CmisObjectInFolderContainerType>();
+		}
+		return this.children;
+	}
 
-    /**
-     * Gets the value of the any property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAny().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Object }
-     * {@link Element }
-     * 
-     * 
-     */
-    public List<Object> getAny() {
-        if (any == null) {
-            any = new ArrayList<Object>();
-        }
-        return this.any;
-    }
+	/**
+	 * Gets the value of the any property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the any property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getAny().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list {@link Object }
+	 * {@link Element }
+	 * 
+	 * 
+	 */
+	public List<Object> getAny() {
+		if (any == null) {
+			any = new ArrayList<Object>();
+		}
+		return this.any;
+	}
 
-    /**
-     * Gets a map that contains attributes that aren't bound to any typed property on this class.
-     * 
-     * <p>
-     * the map is keyed by the name of the attribute and 
-     * the value is the string value of the attribute.
-     * 
-     * the map returned by this method is live, and you can add new attribute
-     * by updating the map directly. Because of this design, there's no setter.
-     * 
-     * 
-     * @return
-     *     always non-null
-     */
-    public Map<QName, String> getOtherAttributes() {
-        return otherAttributes;
-    }
+	/**
+	 * Gets a map that contains attributes that aren't bound to any typed
+	 * property on this class.
+	 * 
+	 * <p>
+	 * the map is keyed by the name of the attribute and the value is the string
+	 * value of the attribute.
+	 * 
+	 * the map returned by this method is live, and you can add new attribute by
+	 * updating the map directly. Because of this design, there's no setter.
+	 * 
+	 * 
+	 * @return always non-null
+	 */
+	public Map<QName, String> getOtherAttributes() {
+		return otherAttributes;
+	}
 
 }

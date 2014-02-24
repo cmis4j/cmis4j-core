@@ -24,15 +24,7 @@ SOFTWARE.
 
 package com.github.cmis4j.core;
 
-import java.math.BigInteger;
-
-import javax.annotation.Resource;
-import javax.xml.ws.WebServiceContext;
-
-import org.oasis_open.docs.ns.cmis.messaging._200908.CmisFaultType;
-import org.oasis_open.docs.ns.cmis.messaging._200908.EnumServiceException;
 import org.oasis_open.docs.ns.cmis.ws._200908.ACLServicePort;
-import org.oasis_open.docs.ns.cmis.ws._200908.CmisException;
 import org.oasis_open.docs.ns.cmis.ws._200908.DiscoveryServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.MultiFilingServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.NavigationServicePort;
@@ -42,43 +34,8 @@ import org.oasis_open.docs.ns.cmis.ws._200908.RelationshipServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.RepositoryServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.VersioningServicePort;
 
-public abstract class CmisServiceBase implements ACLServicePort,
+public interface CmisService extends ACLServicePort,
 		DiscoveryServicePort, MultiFilingServicePort, NavigationServicePort,
 		ObjectServicePort, PolicyServicePort, RelationshipServicePort,
 		RepositoryServicePort, VersioningServicePort {
-	@Resource
-	private WebServiceContext ctx;
-	private enum ErrorMessage {
-		NOT_IMPLEMENTED(-1, "not implemented"),
-		INVALID_CONTEXT(-2, "invalid context");
-		private final int code;
-		private final String message;
-		private ErrorMessage(int code, String message) {
-			this.code = code;
-			this.message = message;
-		}
-	}
-
-	private void cmisException(ErrorMessage error, EnumServiceException reason) throws CmisException {
-		CmisFaultType cmisFault = new CmisFaultType();
-		cmisFault.setCode(BigInteger.valueOf(error.code));
-		cmisFault.setMessage(error.message);
-		cmisFault.setType(reason);
-		throw new CmisException(error.message, cmisFault);
-	}
-
-	protected void notImplemented() throws CmisException {
-		cmisException(ErrorMessage.NOT_IMPLEMENTED, EnumServiceException.NOT_SUPPORTED);
-	}
-	
-	protected void invalidContext() throws CmisException {
-		cmisException(ErrorMessage.INVALID_CONTEXT, EnumServiceException.NOT_SUPPORTED);
-	}
-	
-	protected WebServiceContext getContext() throws CmisException {
-		if (ctx == null) {
-			invalidContext();
-		}
-		return ctx;
-	}
 }

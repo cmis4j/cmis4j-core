@@ -1,4 +1,3 @@
-
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import java.math.BigInteger;
@@ -10,11 +9,13 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -36,172 +37,156 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "repositoryId",
-    "objectId",
-    "renditionFilter",
-    "maxItems",
-    "skipCount",
-    "extension"
-})
+@XmlType(name = "", propOrder = { "repositoryId", "objectId",
+		"renditionFilter", "maxItems", "skipCount", "extension" })
 @XmlRootElement(name = "getRenditions")
 public class GetRenditions {
 
-    @XmlElement(required = true)
-    protected String repositoryId;
-    @XmlElement(required = true)
-    protected String objectId;
-    @XmlElementRef(name = "renditionFilter", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> renditionFilter;
-    @XmlElementRef(name = "maxItems", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<BigInteger> maxItems;
-    @XmlElementRef(name = "skipCount", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<BigInteger> skipCount;
-    @XmlElementRef(name = "extension", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<CmisExtensionType> extension;
+	@XmlElement(required = true)
+	protected String repositoryId;
+	@XmlElement(required = true)
+	protected String objectId;
+	@XmlElementRef(name = "renditionFilter", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<String> renditionFilter;
+	@XmlElementRef(name = "maxItems", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<BigInteger> maxItems;
+	@XmlElementRef(name = "skipCount", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<BigInteger> skipCount;
+	@XmlElementRef(name = "extension", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<CmisExtensionType> extension;
 
-    /**
-     * Gets the value of the repositoryId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRepositoryId() {
-        return repositoryId;
-    }
+	/**
+	 * Gets the value of the repositoryId property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getRepositoryId() {
+		return repositoryId;
+	}
 
-    /**
-     * Sets the value of the repositoryId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRepositoryId(String value) {
-        this.repositoryId = value;
-    }
+	/**
+	 * Sets the value of the repositoryId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setRepositoryId(String value) {
+		this.repositoryId = value;
+	}
 
-    /**
-     * Gets the value of the objectId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getObjectId() {
-        return objectId;
-    }
+	/**
+	 * Gets the value of the objectId property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getObjectId() {
+		return objectId;
+	}
 
-    /**
-     * Sets the value of the objectId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setObjectId(String value) {
-        this.objectId = value;
-    }
+	/**
+	 * Sets the value of the objectId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setObjectId(String value) {
+		this.objectId = value;
+	}
 
-    /**
-     * Gets the value of the renditionFilter property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
-     */
-    public JAXBElement<String> getRenditionFilter() {
-        return renditionFilter;
-    }
+	/**
+	 * Gets the value of the renditionFilter property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}{@link String }
+	 *         {@code >}
+	 * 
+	 */
+	public JAXBElement<String> getRenditionFilter() {
+		return renditionFilter;
+	}
 
-    /**
-     * Sets the value of the renditionFilter property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
-     */
-    public void setRenditionFilter(JAXBElement<String> value) {
-        this.renditionFilter = value;
-    }
+	/**
+	 * Sets the value of the renditionFilter property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}{@link String }
+	 *            {@code >}
+	 * 
+	 */
+	public void setRenditionFilter(JAXBElement<String> value) {
+		this.renditionFilter = value;
+	}
 
-    /**
-     * Gets the value of the maxItems property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     *     
-     */
-    public JAXBElement<BigInteger> getMaxItems() {
-        return maxItems;
-    }
+	/**
+	 * Gets the value of the maxItems property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}{@link BigInteger }
+	 *         {@code >}
+	 * 
+	 */
+	public JAXBElement<BigInteger> getMaxItems() {
+		return maxItems;
+	}
 
-    /**
-     * Sets the value of the maxItems property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     *     
-     */
-    public void setMaxItems(JAXBElement<BigInteger> value) {
-        this.maxItems = value;
-    }
+	/**
+	 * Sets the value of the maxItems property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}
+	 *            {@link BigInteger }{@code >}
+	 * 
+	 */
+	public void setMaxItems(JAXBElement<BigInteger> value) {
+		this.maxItems = value;
+	}
 
-    /**
-     * Gets the value of the skipCount property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     *     
-     */
-    public JAXBElement<BigInteger> getSkipCount() {
-        return skipCount;
-    }
+	/**
+	 * Gets the value of the skipCount property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}{@link BigInteger }
+	 *         {@code >}
+	 * 
+	 */
+	public JAXBElement<BigInteger> getSkipCount() {
+		return skipCount;
+	}
 
-    /**
-     * Sets the value of the skipCount property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     *     
-     */
-    public void setSkipCount(JAXBElement<BigInteger> value) {
-        this.skipCount = value;
-    }
+	/**
+	 * Sets the value of the skipCount property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}
+	 *            {@link BigInteger }{@code >}
+	 * 
+	 */
+	public void setSkipCount(JAXBElement<BigInteger> value) {
+		this.skipCount = value;
+	}
 
-    /**
-     * Gets the value of the extension property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link CmisExtensionType }{@code >}
-     *     
-     */
-    public JAXBElement<CmisExtensionType> getExtension() {
-        return extension;
-    }
+	/**
+	 * Gets the value of the extension property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}
+	 *         {@link CmisExtensionType }{@code >}
+	 * 
+	 */
+	public JAXBElement<CmisExtensionType> getExtension() {
+		return extension;
+	}
 
-    /**
-     * Sets the value of the extension property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link CmisExtensionType }{@code >}
-     *     
-     */
-    public void setExtension(JAXBElement<CmisExtensionType> value) {
-        this.extension = value;
-    }
+	/**
+	 * Sets the value of the extension property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}
+	 *            {@link CmisExtensionType }{@code >}
+	 * 
+	 */
+	public void setExtension(JAXBElement<CmisExtensionType> value) {
+		this.extension = value;
+	}
 
 }

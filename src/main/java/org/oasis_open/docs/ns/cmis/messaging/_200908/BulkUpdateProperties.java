@@ -1,4 +1,3 @@
-
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import javax.xml.bind.JAXBElement;
@@ -10,11 +9,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisBulkUpdateType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -33,91 +34,80 @@ import org.oasis_open.docs.ns.cmis.core._200908.CmisBulkUpdateType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "repositoryId",
-    "bulkUpdateData",
-    "extension"
-})
+@XmlType(name = "", propOrder = { "repositoryId", "bulkUpdateData", "extension" })
 @XmlRootElement(name = "bulkUpdateProperties")
 public class BulkUpdateProperties {
 
-    @XmlElement(required = true)
-    protected String repositoryId;
-    @XmlElement(required = true)
-    protected CmisBulkUpdateType bulkUpdateData;
-    @XmlElementRef(name = "extension", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
-    protected JAXBElement<CmisExtensionType> extension;
+	@XmlElement(required = true)
+	protected String repositoryId;
+	@XmlElement(required = true)
+	protected CmisBulkUpdateType bulkUpdateData;
+	@XmlElementRef(name = "extension", namespace = "http://docs.oasis-open.org/ns/cmis/messaging/200908/", type = JAXBElement.class, required = false)
+	protected JAXBElement<CmisExtensionType> extension;
 
-    /**
-     * Gets the value of the repositoryId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRepositoryId() {
-        return repositoryId;
-    }
+	/**
+	 * Gets the value of the repositoryId property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getRepositoryId() {
+		return repositoryId;
+	}
 
-    /**
-     * Sets the value of the repositoryId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRepositoryId(String value) {
-        this.repositoryId = value;
-    }
+	/**
+	 * Sets the value of the repositoryId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setRepositoryId(String value) {
+		this.repositoryId = value;
+	}
 
-    /**
-     * Gets the value of the bulkUpdateData property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CmisBulkUpdateType }
-     *     
-     */
-    public CmisBulkUpdateType getBulkUpdateData() {
-        return bulkUpdateData;
-    }
+	/**
+	 * Gets the value of the bulkUpdateData property.
+	 * 
+	 * @return possible object is {@link CmisBulkUpdateType }
+	 * 
+	 */
+	public CmisBulkUpdateType getBulkUpdateData() {
+		return bulkUpdateData;
+	}
 
-    /**
-     * Sets the value of the bulkUpdateData property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CmisBulkUpdateType }
-     *     
-     */
-    public void setBulkUpdateData(CmisBulkUpdateType value) {
-        this.bulkUpdateData = value;
-    }
+	/**
+	 * Sets the value of the bulkUpdateData property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link CmisBulkUpdateType }
+	 * 
+	 */
+	public void setBulkUpdateData(CmisBulkUpdateType value) {
+		this.bulkUpdateData = value;
+	}
 
-    /**
-     * Gets the value of the extension property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link CmisExtensionType }{@code >}
-     *     
-     */
-    public JAXBElement<CmisExtensionType> getExtension() {
-        return extension;
-    }
+	/**
+	 * Gets the value of the extension property.
+	 * 
+	 * @return possible object is {@link JAXBElement }{@code <}
+	 *         {@link CmisExtensionType }{@code >}
+	 * 
+	 */
+	public JAXBElement<CmisExtensionType> getExtension() {
+		return extension;
+	}
 
-    /**
-     * Sets the value of the extension property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link CmisExtensionType }{@code >}
-     *     
-     */
-    public void setExtension(JAXBElement<CmisExtensionType> value) {
-        this.extension = value;
-    }
+	/**
+	 * Sets the value of the extension property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link JAXBElement }{@code <}
+	 *            {@link CmisExtensionType }{@code >}
+	 * 
+	 */
+	public void setExtension(JAXBElement<CmisExtensionType> value) {
+		this.extension = value;
+	}
 
 }

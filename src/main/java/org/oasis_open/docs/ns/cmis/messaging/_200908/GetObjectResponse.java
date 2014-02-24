@@ -1,4 +1,3 @@
-
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,11 +7,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisObjectType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -29,37 +30,32 @@ import org.oasis_open.docs.ns.cmis.core._200908.CmisObjectType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "object"
-})
+@XmlType(name = "", propOrder = { "object" })
 @XmlRootElement(name = "getObjectResponse")
 public class GetObjectResponse {
 
-    @XmlElement(required = true)
-    protected CmisObjectType object;
+	@XmlElement(required = true)
+	protected CmisObjectType object;
 
-    /**
-     * Gets the value of the object property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CmisObjectType }
-     *     
-     */
-    public CmisObjectType getObject() {
-        return object;
-    }
+	/**
+	 * Gets the value of the object property.
+	 * 
+	 * @return possible object is {@link CmisObjectType }
+	 * 
+	 */
+	public CmisObjectType getObject() {
+		return object;
+	}
 
-    /**
-     * Sets the value of the object property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CmisObjectType }
-     *     
-     */
-    public void setObject(CmisObjectType value) {
-        this.object = value;
-    }
+	/**
+	 * Sets the value of the object property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link CmisObjectType }
+	 * 
+	 */
+	public void setObject(CmisObjectType value) {
+		this.object = value;
+	}
 
 }

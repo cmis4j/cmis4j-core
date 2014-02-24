@@ -1,4 +1,3 @@
-
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,11 +7,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisPropertiesType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -29,37 +30,32 @@ import org.oasis_open.docs.ns.cmis.core._200908.CmisPropertiesType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "properties"
-})
+@XmlType(name = "", propOrder = { "properties" })
 @XmlRootElement(name = "getPropertiesOfLatestVersionResponse")
 public class GetPropertiesOfLatestVersionResponse {
 
-    @XmlElement(required = true)
-    protected CmisPropertiesType properties;
+	@XmlElement(required = true)
+	protected CmisPropertiesType properties;
 
-    /**
-     * Gets the value of the properties property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CmisPropertiesType }
-     *     
-     */
-    public CmisPropertiesType getProperties() {
-        return properties;
-    }
+	/**
+	 * Gets the value of the properties property.
+	 * 
+	 * @return possible object is {@link CmisPropertiesType }
+	 * 
+	 */
+	public CmisPropertiesType getProperties() {
+		return properties;
+	}
 
-    /**
-     * Sets the value of the properties property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CmisPropertiesType }
-     *     
-     */
-    public void setProperties(CmisPropertiesType value) {
-        this.properties = value;
-    }
+	/**
+	 * Sets the value of the properties property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link CmisPropertiesType }
+	 * 
+	 */
+	public void setProperties(CmisPropertiesType value) {
+		this.properties = value;
+	}
 
 }

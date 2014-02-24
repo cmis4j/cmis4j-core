@@ -1,4 +1,3 @@
-
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,11 +7,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisRepositoryInfoType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -29,37 +30,32 @@ import org.oasis_open.docs.ns.cmis.core._200908.CmisRepositoryInfoType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "repositoryInfo"
-})
+@XmlType(name = "", propOrder = { "repositoryInfo" })
 @XmlRootElement(name = "getRepositoryInfoResponse")
 public class GetRepositoryInfoResponse {
 
-    @XmlElement(required = true)
-    protected CmisRepositoryInfoType repositoryInfo;
+	@XmlElement(required = true)
+	protected CmisRepositoryInfoType repositoryInfo;
 
-    /**
-     * Gets the value of the repositoryInfo property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CmisRepositoryInfoType }
-     *     
-     */
-    public CmisRepositoryInfoType getRepositoryInfo() {
-        return repositoryInfo;
-    }
+	/**
+	 * Gets the value of the repositoryInfo property.
+	 * 
+	 * @return possible object is {@link CmisRepositoryInfoType }
+	 * 
+	 */
+	public CmisRepositoryInfoType getRepositoryInfo() {
+		return repositoryInfo;
+	}
 
-    /**
-     * Sets the value of the repositoryInfo property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CmisRepositoryInfoType }
-     *     
-     */
-    public void setRepositoryInfo(CmisRepositoryInfoType value) {
-        this.repositoryInfo = value;
-    }
+	/**
+	 * Sets the value of the repositoryInfo property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link CmisRepositoryInfoType }
+	 * 
+	 */
+	public void setRepositoryInfo(CmisRepositoryInfoType value) {
+		this.repositoryInfo = value;
+	}
 
 }

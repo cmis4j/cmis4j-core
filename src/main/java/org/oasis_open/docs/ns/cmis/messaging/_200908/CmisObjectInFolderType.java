@@ -1,4 +1,3 @@
-
 package org.oasis_open.docs.ns.cmis.messaging._200908;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.namespace.QName;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisObjectType;
 import org.w3c.dom.Element;
 
-
 /**
- * <p>Java class for cmisObjectInFolderType complex type.
+ * <p>
+ * Java class for cmisObjectInFolderType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="cmisObjectInFolderType">
@@ -40,115 +41,106 @@ import org.w3c.dom.Element;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cmisObjectInFolderType", propOrder = {
-    "object",
-    "pathSegment",
-    "any"
-})
+@XmlType(name = "cmisObjectInFolderType", propOrder = { "object",
+		"pathSegment", "any" })
 public class CmisObjectInFolderType {
 
-    @XmlElement(required = true)
-    protected CmisObjectType object;
-    protected String pathSegment;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
-    @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+	@XmlElement(required = true)
+	protected CmisObjectType object;
+	protected String pathSegment;
+	@XmlAnyElement(lax = true)
+	protected List<Object> any;
+	@XmlAnyAttribute
+	private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
-    /**
-     * Gets the value of the object property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CmisObjectType }
-     *     
-     */
-    public CmisObjectType getObject() {
-        return object;
-    }
+	/**
+	 * Gets the value of the object property.
+	 * 
+	 * @return possible object is {@link CmisObjectType }
+	 * 
+	 */
+	public CmisObjectType getObject() {
+		return object;
+	}
 
-    /**
-     * Sets the value of the object property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CmisObjectType }
-     *     
-     */
-    public void setObject(CmisObjectType value) {
-        this.object = value;
-    }
+	/**
+	 * Sets the value of the object property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link CmisObjectType }
+	 * 
+	 */
+	public void setObject(CmisObjectType value) {
+		this.object = value;
+	}
 
-    /**
-     * Gets the value of the pathSegment property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPathSegment() {
-        return pathSegment;
-    }
+	/**
+	 * Gets the value of the pathSegment property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getPathSegment() {
+		return pathSegment;
+	}
 
-    /**
-     * Sets the value of the pathSegment property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPathSegment(String value) {
-        this.pathSegment = value;
-    }
+	/**
+	 * Sets the value of the pathSegment property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setPathSegment(String value) {
+		this.pathSegment = value;
+	}
 
-    /**
-     * Gets the value of the any property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAny().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Object }
-     * {@link Element }
-     * 
-     * 
-     */
-    public List<Object> getAny() {
-        if (any == null) {
-            any = new ArrayList<Object>();
-        }
-        return this.any;
-    }
+	/**
+	 * Gets the value of the any property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the any property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getAny().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list {@link Object }
+	 * {@link Element }
+	 * 
+	 * 
+	 */
+	public List<Object> getAny() {
+		if (any == null) {
+			any = new ArrayList<Object>();
+		}
+		return this.any;
+	}
 
-    /**
-     * Gets a map that contains attributes that aren't bound to any typed property on this class.
-     * 
-     * <p>
-     * the map is keyed by the name of the attribute and 
-     * the value is the string value of the attribute.
-     * 
-     * the map returned by this method is live, and you can add new attribute
-     * by updating the map directly. Because of this design, there's no setter.
-     * 
-     * 
-     * @return
-     *     always non-null
-     */
-    public Map<QName, String> getOtherAttributes() {
-        return otherAttributes;
-    }
+	/**
+	 * Gets a map that contains attributes that aren't bound to any typed
+	 * property on this class.
+	 * 
+	 * <p>
+	 * the map is keyed by the name of the attribute and the value is the string
+	 * value of the attribute.
+	 * 
+	 * the map returned by this method is live, and you can add new attribute by
+	 * updating the map directly. Because of this design, there's no setter.
+	 * 
+	 * 
+	 * @return always non-null
+	 */
+	public Map<QName, String> getOtherAttributes() {
+		return otherAttributes;
+	}
 
 }
