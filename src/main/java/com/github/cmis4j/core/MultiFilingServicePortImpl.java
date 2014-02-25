@@ -24,10 +24,13 @@ SOFTWARE.
 
 package com.github.cmis4j.core;
 
+import java.security.Principal;
 import java.util.logging.Logger;
 
+import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
+import javax.xml.ws.WebServiceContext;
 
 import org.oasis_open.docs.ns.cmis.messaging._200908.CmisExtensionType;
 import org.oasis_open.docs.ns.cmis.ws._200908.CmisException;
@@ -38,28 +41,42 @@ public class MultiFilingServicePortImpl implements MultiFilingServicePort {
 	private static final Logger LOG = Logger.getLogger(MultiFilingServicePortImpl.class
 			.getName());
 	private CmisServiceBase service;
+	@Resource
+	private WebServiceContext ctx;
 	
 	public MultiFilingServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
+	private synchronized String getUser() {
+		if (ctx != null) {
+			Principal principal = ctx.getUserPrincipal();
+			if (principal != null) {
+				return principal.getName();
+			}
+		}
+		return "";
+	}
+	
 	@Override
 	public void removeObjectFromFolder(String repositoryId, String objectId,
 			String folderId, Holder<CmisExtensionType> extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("folderId: " + folderId);
-		service.removeObjectFromFolder(repositoryId, objectId, folderId, extension);
+		service.removeObjectFromFolder(getUser(), repositoryId, objectId, folderId, extension);
 	}
 
 	@Override
 	public void addObjectToFolder(String repositoryId, String objectId,
 			String folderId, Boolean allVersions,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("folderId: " + folderId);
-		service.addObjectToFolder(repositoryId, objectId, folderId, allVersions, extension);
+		service.addObjectToFolder(getUser(), repositoryId, objectId, folderId, allVersions, extension);
 	}
 }

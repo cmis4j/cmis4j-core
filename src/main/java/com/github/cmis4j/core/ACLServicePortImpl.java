@@ -24,9 +24,12 @@ SOFTWARE.
 
 package com.github.cmis4j.core;
 
+import java.security.Principal;
 import java.util.logging.Logger;
 
+import javax.annotation.Resource;
 import javax.jws.WebService;
+import javax.xml.ws.WebServiceContext;
 
 import org.oasis_open.docs.ns.cmis.core._200908.CmisAccessControlListType;
 import org.oasis_open.docs.ns.cmis.core._200908.EnumACLPropagation;
@@ -40,20 +43,33 @@ public class ACLServicePortImpl implements ACLServicePort {
 	private static final Logger LOG = Logger.getLogger(ACLServicePortImpl.class
 			.getName());
 	private CmisServiceBase service;
-
+	@Resource
+	private WebServiceContext ctx;
+	
 	public ACLServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
+	private synchronized String getUser() {
+		if (ctx != null) {
+			Principal principal = ctx.getUserPrincipal();
+			if (principal != null) {
+				return principal.getName();
+			}
+		}
+		return "";
+	}
+	
 	@Override
 	public CmisACLType applyACL(String repositoryId, String objectId,
 			CmisAccessControlListType addACEs,
 			CmisAccessControlListType removeACEs,
 			EnumACLPropagation aclPropagation, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
-		return service.applyACL(repositoryId, objectId, addACEs, removeACEs,
+		return service.applyACL(getUser(), repositoryId, objectId, addACEs, removeACEs,
 				aclPropagation, extension);
 	}
 
@@ -61,9 +77,10 @@ public class ACLServicePortImpl implements ACLServicePort {
 	public CmisACLType getACL(String repositoryId, String objectId,
 			Boolean onlyBasicPermissions, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
-		return service.getACL(repositoryId, objectId, onlyBasicPermissions,
+		return service.getACL(getUser(), repositoryId, objectId, onlyBasicPermissions,
 				extension);
 	}
 }

@@ -25,10 +25,13 @@ SOFTWARE.
 package com.github.cmis4j.core;
 
 import java.math.BigInteger;
+import java.security.Principal;
 import java.util.logging.Logger;
 
+import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
+import javax.xml.ws.WebServiceContext;
 
 import org.oasis_open.docs.ns.cmis.messaging._200908.CmisExtensionType;
 import org.oasis_open.docs.ns.cmis.messaging._200908.CmisObjectListType;
@@ -42,16 +45,29 @@ public class DiscoveryServicePortImpl implements DiscoveryServicePort {
 	private static final Logger LOG = Logger.getLogger(DiscoveryServicePortImpl.class
 			.getName());
 	private CmisServiceBase service;
+	@Resource
+	private WebServiceContext ctx;
 	
 	public DiscoveryServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
+
+	private synchronized String getUser() {
+		if (ctx != null) {
+			Principal principal = ctx.getUserPrincipal();
+			if (principal != null) {
+				return principal.getName();
+			}
+		}
+		return "";
+	}
 	
 	@Override
 	public QueryResponse query(Query parameters) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + ((parameters != null) ? parameters.getRepositoryId() : "null"));
 		LOG.info("statement: " + ((parameters != null) ? parameters.getStatement() : "null"));
-		return service.query(parameters);
+		return service.query(getUser(), parameters);
 	}
 
 	@Override
@@ -60,9 +76,10 @@ public class DiscoveryServicePortImpl implements DiscoveryServicePort {
 			String filter, Boolean includePolicyIds, Boolean includeACL,
 			BigInteger maxItems, CmisExtensionType extension,
 			Holder<CmisObjectListType> objects) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("changeLogToken: " + changeLogToken);
 		LOG.info("filter: " + filter);
-		service.getContentChanges(repositoryId, changeLogToken, includeProperties, filter, includePolicyIds, includeACL, maxItems, extension, objects);
+		service.getContentChanges(getUser(), repositoryId, changeLogToken, includeProperties, filter, includePolicyIds, includeACL, maxItems, extension, objects);
 	}
 }

@@ -24,10 +24,13 @@ SOFTWARE.
 
 package com.github.cmis4j.core;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.annotation.Resource;
 import javax.xml.ws.Holder;
+import javax.xml.ws.WebServiceContext;
 
 import org.oasis_open.docs.ns.cmis.core._200908.CmisAccessControlListType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisObjectType;
@@ -43,28 +46,42 @@ public class VersioningServicePortImpl implements VersioningServicePort {
 	private static final Logger LOG = Logger.getLogger(VersioningServicePortImpl.class
 			.getName());
 	private CmisServiceBase service;
-
+	@Resource
+	private WebServiceContext ctx;
+	
 	public VersioningServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
+	private synchronized String getUser() {
+		if (ctx != null) {
+			Principal principal = ctx.getUserPrincipal();
+			if (principal != null) {
+				return principal.getName();
+			}
+		}
+		return "";
+	}
+	
 	@Override
 	public List<CmisObjectType> getAllVersions(String repositoryId,
 			String objectId, String filter, Boolean includeAllowableActions,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("filter: " + filter);
-		return service.getAllVersions(repositoryId, objectId, filter, includeAllowableActions, extension);
+		return service.getAllVersions(getUser(), repositoryId, objectId, filter, includeAllowableActions, extension);
 	}
 
 	@Override
 	public void checkOut(String repositoryId, Holder<String> objectId,
 			Holder<CmisExtensionType> extension, Holder<Boolean> contentCopied)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
-		service.checkOut(repositoryId, objectId, extension, contentCopied);
+		service.checkOut(getUser(), repositoryId, objectId, extension, contentCopied);
 	}
 
 	@Override
@@ -75,28 +92,31 @@ public class VersioningServicePortImpl implements VersioningServicePort {
 			String renditionFilter, Boolean includePolicyIds,
 			Boolean includeACL, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("filter: " + filter);
-		return service.getObjectOfLatestVersion(repositoryId, objectId, major, filter, includeAllowableActions, includeRelationships, renditionFilter, includePolicyIds, includeACL, extension);
+		return service.getObjectOfLatestVersion(getUser(), repositoryId, objectId, major, filter, includeAllowableActions, includeRelationships, renditionFilter, includePolicyIds, includeACL, extension);
 	}
 
 	@Override
 	public CmisPropertiesType getPropertiesOfLatestVersion(String repositoryId,
 			String objectId, Boolean major, String filter,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("filter: " + filter);
-		return service.getPropertiesOfLatestVersion(repositoryId, objectId, major, filter, extension);
+		return service.getPropertiesOfLatestVersion(getUser(), repositoryId, objectId, major, filter, extension);
 	}
 
 	@Override
 	public void cancelCheckOut(String repositoryId, String objectId,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
-		service.cancelCheckOut(repositoryId, objectId, extension);
+		service.cancelCheckOut(getUser(), repositoryId, objectId, extension);
 	}
 
 	@Override
@@ -106,9 +126,10 @@ public class VersioningServicePortImpl implements VersioningServicePort {
 			List<String> policies, CmisAccessControlListType addACEs,
 			CmisAccessControlListType removeACEs,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("properties: " + properties);
-		service.checkIn(repositoryId, objectId, major, properties, contentStream, checkinComment, policies, addACEs, removeACEs, extension);
+		service.checkIn(getUser(), repositoryId, objectId, major, properties, contentStream, checkinComment, policies, addACEs, removeACEs, extension);
 	}
 }

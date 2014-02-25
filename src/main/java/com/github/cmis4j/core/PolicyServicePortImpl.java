@@ -24,10 +24,13 @@ SOFTWARE.
 
 package com.github.cmis4j.core;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.annotation.Resource;
 import javax.xml.ws.Holder;
+import javax.xml.ws.WebServiceContext;
 
 import org.oasis_open.docs.ns.cmis.core._200908.CmisObjectType;
 import org.oasis_open.docs.ns.cmis.messaging._200908.CmisExtensionType;
@@ -39,38 +42,53 @@ public class PolicyServicePortImpl implements PolicyServicePort {
 	private static final Logger LOG = Logger.getLogger(PolicyServicePortImpl.class
 			.getName());
 	private CmisServiceBase service;
-
+	@Resource
+	private WebServiceContext ctx;
+	
 	public PolicyServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
+	private synchronized String getUser() {
+		if (ctx != null) {
+			Principal principal = ctx.getUserPrincipal();
+			if (principal != null) {
+				return principal.getName();
+			}
+		}
+		return "";
+	}
+	
 	@Override
 	public void removePolicy(String repositoryId, String policyId,
 			String objectId, Holder<CmisExtensionType> extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("policyId: " + policyId);
-		service.removePolicy(repositoryId, policyId, objectId, extension);
+		service.removePolicy(getUser(), repositoryId, policyId, objectId, extension);
 	}
 
 	@Override
 	public void applyPolicy(String repositoryId, String policyId,
 			String objectId, Holder<CmisExtensionType> extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("policyId: " + policyId);
-		service.applyPolicy(repositoryId, policyId, objectId, extension);
+		service.applyPolicy(getUser(), repositoryId, policyId, objectId, extension);
 	}
 
 	@Override
 	public List<CmisObjectType> getAppliedPolicies(String repositoryId,
 			String objectId, String filter, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("objectId: " + objectId);
 		LOG.info("filter: " + filter);
-		return service.getAppliedPolicies(repositoryId, objectId, filter, extension);
+		return service.getAppliedPolicies(getUser(), repositoryId, objectId, filter, extension);
 	}
 }

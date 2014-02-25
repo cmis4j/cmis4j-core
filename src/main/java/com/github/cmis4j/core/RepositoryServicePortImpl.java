@@ -25,11 +25,14 @@ SOFTWARE.
 package com.github.cmis4j.core;
 
 import java.math.BigInteger;
+import java.security.Principal;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
+import javax.xml.ws.WebServiceContext;
 
 import org.oasis_open.docs.ns.cmis.core._200908.CmisRepositoryInfoType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisTypeDefinitionType;
@@ -45,9 +48,21 @@ public class RepositoryServicePortImpl implements RepositoryServicePort {
 	private static final Logger LOG = Logger.getLogger(RepositoryServicePortImpl.class
 			.getName());
 	private CmisServiceBase service;
+	@Resource
+	private WebServiceContext ctx;
 	
 	public RepositoryServicePortImpl(CmisServiceBase service) {
 		this.service = service;
+	}
+
+	private synchronized String getUser() {
+		if (ctx != null) {
+			Principal principal = ctx.getUserPrincipal();
+			if (principal != null) {
+				return principal.getName();
+			}
+		}
+		return "";
 	}
 	
 	@Override
@@ -55,41 +70,46 @@ public class RepositoryServicePortImpl implements RepositoryServicePort {
 			String typeId, Boolean includePropertyDefinitions,
 			BigInteger maxItems, BigInteger skipCount,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("typeId: " + typeId);
-		return service.getTypeChildren(repositoryId, typeId, includePropertyDefinitions, maxItems, skipCount, extension);
+		return service.getTypeChildren(getUser(), repositoryId, typeId, includePropertyDefinitions, maxItems, skipCount, extension);
 	}
 
 	@Override
 	public CmisTypeDefinitionType getTypeDefinition(String repositoryId,
 			String typeId, CmisExtensionType extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("typeId: " + typeId);
-		return service.getTypeDefinition(repositoryId, typeId, extension);
+		return service.getTypeDefinition(getUser(), repositoryId, typeId, extension);
 	}
 
 	@Override
 	public void updateType(String repositoryId,
 			Holder<CmisTypeDefinitionType> type, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("type: " + type);
-		service.updateType(repositoryId, type, extension);
+		service.updateType(getUser(), repositoryId, type, extension);
 	}
 
 	@Override
 	public CmisRepositoryInfoType getRepositoryInfo(String repositoryId,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
-		return service.getRepositoryInfo(repositoryId, extension);
+		return service.getRepositoryInfo(getUser(), repositoryId, extension);
 	}
 
 	@Override
 	public void deleteType(String repositoryId, String typeId,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("typeId: " + typeId);
-		service.deleteType(repositoryId, typeId, extension);
+		service.deleteType(getUser(), repositoryId, typeId, extension);
 	}
 
 	@Override
@@ -97,25 +117,27 @@ public class RepositoryServicePortImpl implements RepositoryServicePort {
 			String typeId, BigInteger depth,
 			Boolean includePropertyDefinitions, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("typeId: " + typeId);
-		return service.getTypeDescendants(repositoryId, typeId, depth, includePropertyDefinitions, extension);
+		return service.getTypeDescendants(getUser(), repositoryId, typeId, depth, includePropertyDefinitions, extension);
 	}
 
 	@Override
 	public void createType(String repositoryId,
 			Holder<CmisTypeDefinitionType> type, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("user: " + getUser());
 		LOG.info("repositoryId: " + repositoryId);
 		LOG.info("type: " + type);
-		service.createType(repositoryId, type, extension);
+		service.createType(getUser(), repositoryId, type, extension);
 	}
 
 	@Override
 	public List<CmisRepositoryEntryType> getRepositories(
 			CmisExtensionType extension) throws CmisException {
-		LOG.info("");
-		return service.getRepositories(extension);
+		LOG.info("user: " + getUser());
+		return service.getRepositories(getUser(), extension);
 	}
 
 }
