@@ -24,6 +24,8 @@ SOFTWARE.
 
 package com.github.cmis4j.core;
 
+import java.util.logging.Logger;
+
 import javax.jws.WebService;
 
 import org.oasis_open.docs.ns.cmis.core._200908.CmisAccessControlListType;
@@ -35,26 +37,33 @@ import org.oasis_open.docs.ns.cmis.ws._200908.CmisException;
 
 @WebService(serviceName = "ACLService", portName = "ACLServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.ACLServicePort")
 public class ACLServicePortImpl implements ACLServicePort {
-	private CmisService service;
-	
-	public ACLServicePortImpl(CmisService service) {
+	private static final Logger LOG = Logger.getLogger(ACLServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
+
+	public ACLServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
-	
+
 	@Override
 	public CmisACLType applyACL(String repositoryId, String objectId,
 			CmisAccessControlListType addACEs,
 			CmisAccessControlListType removeACEs,
 			EnumACLPropagation aclPropagation, CmisExtensionType extension)
 			throws CmisException {
-		return service.applyACL(repositoryId, objectId, addACEs, removeACEs, aclPropagation, extension);
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		return service.applyACL(repositoryId, objectId, addACEs, removeACEs,
+				aclPropagation, extension);
 	}
 
 	@Override
 	public CmisACLType getACL(String repositoryId, String objectId,
 			Boolean onlyBasicPermissions, CmisExtensionType extension)
 			throws CmisException {
-		return service.getACL(repositoryId, objectId, onlyBasicPermissions, extension);
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		return service.getACL(repositoryId, objectId, onlyBasicPermissions,
+				extension);
 	}
-
 }

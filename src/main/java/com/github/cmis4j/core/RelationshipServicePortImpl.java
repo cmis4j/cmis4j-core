@@ -25,6 +25,8 @@ SOFTWARE.
 package com.github.cmis4j.core;
 
 import java.math.BigInteger;
+import java.util.logging.Logger;
+
 import org.oasis_open.docs.ns.cmis.core._200908.EnumRelationshipDirection;
 import org.oasis_open.docs.ns.cmis.messaging._200908.CmisExtensionType;
 import org.oasis_open.docs.ns.cmis.messaging._200908.CmisObjectListType;
@@ -33,9 +35,11 @@ import org.oasis_open.docs.ns.cmis.ws._200908.RelationshipServicePort;
 
 @javax.jws.WebService(serviceName = "RelationshipService", portName = "RelationshipServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.RelationshipServicePort")
 public class RelationshipServicePortImpl implements RelationshipServicePort {
-	private CmisService service;
+	private static final Logger LOG = Logger.getLogger(RelationshipServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
 
-	public RelationshipServicePortImpl(CmisService service) {
+	public RelationshipServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
@@ -46,6 +50,10 @@ public class RelationshipServicePortImpl implements RelationshipServicePort {
 			String filter, Boolean includeAllowableActions,
 			BigInteger maxItems, BigInteger skipCount,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("filter: " + filter);
+		LOG.info("typeId: " + typeId);
 		return service
 				.getObjectRelationships(repositoryId, objectId,
 						includeSubRelationshipTypes, relationshipDirection,

@@ -24,6 +24,8 @@ SOFTWARE.
 
 package com.github.cmis4j.core;
 
+import java.util.logging.Logger;
+
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
 
@@ -33,9 +35,11 @@ import org.oasis_open.docs.ns.cmis.ws._200908.MultiFilingServicePort;
 
 @WebService(serviceName = "MultiFilingService", portName = "MultiFilingServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.MultiFilingServicePort")
 public class MultiFilingServicePortImpl implements MultiFilingServicePort {
-	private CmisService service;
+	private static final Logger LOG = Logger.getLogger(MultiFilingServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
 	
-	public MultiFilingServicePortImpl(CmisService service) {
+	public MultiFilingServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
@@ -43,6 +47,9 @@ public class MultiFilingServicePortImpl implements MultiFilingServicePort {
 	public void removeObjectFromFolder(String repositoryId, String objectId,
 			String folderId, Holder<CmisExtensionType> extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("folderId: " + folderId);
 		service.removeObjectFromFolder(repositoryId, objectId, folderId, extension);
 	}
 
@@ -50,6 +57,9 @@ public class MultiFilingServicePortImpl implements MultiFilingServicePort {
 	public void addObjectToFolder(String repositoryId, String objectId,
 			String folderId, Boolean allVersions,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("folderId: " + folderId);
 		service.addObjectToFolder(repositoryId, objectId, folderId, allVersions, extension);
 	}
 }

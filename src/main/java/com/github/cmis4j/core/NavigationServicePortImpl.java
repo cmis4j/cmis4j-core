@@ -26,6 +26,7 @@ package com.github.cmis4j.core;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.jws.WebService;
 
@@ -41,9 +42,11 @@ import org.oasis_open.docs.ns.cmis.ws._200908.NavigationServicePort;
 
 @WebService(serviceName = "NavigationService", portName = "NavigationServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.NavigationServicePort")
 public class NavigationServicePortImpl implements NavigationServicePort {
-	private CmisService service;
+	private static final Logger LOG = Logger.getLogger(NavigationServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
 	
-	public NavigationServicePortImpl(CmisService service) {
+	public NavigationServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
@@ -54,6 +57,9 @@ public class NavigationServicePortImpl implements NavigationServicePort {
 			EnumIncludeRelationships includeRelationships,
 			String renditionFilter, BigInteger maxItems, BigInteger skipCount,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("filter: " + filter);
 		return service.getCheckedOutDocs(repositoryId, folderId, filter, orderBy, includeAllowableActions, includeRelationships, renditionFilter, maxItems, skipCount, extension);
 	}
 
@@ -63,6 +69,9 @@ public class NavigationServicePortImpl implements NavigationServicePort {
 			EnumIncludeRelationships includeRelationships,
 			String renditionFilter, Boolean includeRelativePathSegment,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("filter: " + filter);
 		return service.getObjectParents(repositoryId, objectId, filter, includeAllowableActions, includeRelationships, renditionFilter, includeRelativePathSegment, extension);
 	}
 
@@ -73,6 +82,9 @@ public class NavigationServicePortImpl implements NavigationServicePort {
 			EnumIncludeRelationships includeRelationships,
 			String renditionFilter, Boolean includePathSegment,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("filter: " + filter);
 		return service.getDescendants(repositoryId, folderId, depth, filter, includeAllowableActions, includeRelationships, renditionFilter, includePathSegment, extension);
 	}
 
@@ -84,6 +96,9 @@ public class NavigationServicePortImpl implements NavigationServicePort {
 			String renditionFilter, Boolean includePathSegment,
 			BigInteger maxItems, BigInteger skipCount,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("filter: " + filter);
 		return service.getChildren(repositoryId, folderId, filter, orderBy, includeAllowableActions, includeRelationships, renditionFilter, includePathSegment, maxItems, skipCount, extension);
 	}
 
@@ -94,12 +109,18 @@ public class NavigationServicePortImpl implements NavigationServicePort {
 			EnumIncludeRelationships includeRelationships,
 			String renditionFilter, Boolean includePathSegment,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("filter: " + filter);
 		return service.getFolderTree(repositoryId, folderId, depth, filter, includeAllowableActions, includeRelationships, renditionFilter, includePathSegment, extension);
 	}
 
 	@Override
 	public CmisObjectType getFolderParent(String repositoryId, String folderId,
 			String filter, CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("filter: " + filter);
 		return service.getFolderParent(repositoryId, folderId, filter, extension);
 	}
 }

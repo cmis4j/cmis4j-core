@@ -24,7 +24,16 @@ SOFTWARE.
 
 package com.github.cmis4j.core;
 
+import java.math.BigInteger;
+import java.security.Principal;
+
+import javax.annotation.Resource;
+import javax.xml.ws.WebServiceContext;
+
+import org.oasis_open.docs.ns.cmis.messaging._200908.CmisFaultType;
+import org.oasis_open.docs.ns.cmis.messaging._200908.EnumServiceException;
 import org.oasis_open.docs.ns.cmis.ws._200908.ACLServicePort;
+import org.oasis_open.docs.ns.cmis.ws._200908.CmisException;
 import org.oasis_open.docs.ns.cmis.ws._200908.DiscoveryServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.MultiFilingServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.NavigationServicePort;
@@ -34,8 +43,29 @@ import org.oasis_open.docs.ns.cmis.ws._200908.RelationshipServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.RepositoryServicePort;
 import org.oasis_open.docs.ns.cmis.ws._200908.VersioningServicePort;
 
-public interface CmisService extends ACLServicePort,
+public abstract class CmisServiceBase implements ACLServicePort,
 		DiscoveryServicePort, MultiFilingServicePort, NavigationServicePort,
 		ObjectServicePort, PolicyServicePort, RelationshipServicePort,
 		RepositoryServicePort, VersioningServicePort {
+	
+	@Resource
+	private WebServiceContext ctx;
+	
+	public void cmisException(String message, int code, EnumServiceException reason) throws CmisException {
+		CmisFaultType cmisFault = new CmisFaultType();
+		cmisFault.setCode(BigInteger.valueOf(code));
+		cmisFault.setMessage(message);
+		cmisFault.setType(reason != null ? reason : EnumServiceException.RUNTIME);
+		throw new CmisException(message, cmisFault);
+	}
+	
+	public String getUser() {
+		if (ctx != null) {
+			Principal principal = ctx.getUserPrincipal();
+			if (principal != null) {
+				return principal.getName();
+			}
+		}
+		return "";
+	}
 }

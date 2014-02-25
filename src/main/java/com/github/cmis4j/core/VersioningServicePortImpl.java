@@ -25,7 +25,10 @@ SOFTWARE.
 package com.github.cmis4j.core;
 
 import java.util.List;
+import java.util.logging.Logger;
+
 import javax.xml.ws.Holder;
+
 import org.oasis_open.docs.ns.cmis.core._200908.CmisAccessControlListType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisObjectType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisPropertiesType;
@@ -37,9 +40,11 @@ import org.oasis_open.docs.ns.cmis.ws._200908.VersioningServicePort;
 
 @javax.jws.WebService(serviceName = "VersioningService", portName = "VersioningServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.VersioningServicePort")
 public class VersioningServicePortImpl implements VersioningServicePort {
-	private CmisService service;
+	private static final Logger LOG = Logger.getLogger(VersioningServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
 
-	public VersioningServicePortImpl(CmisService service) {
+	public VersioningServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
@@ -47,6 +52,9 @@ public class VersioningServicePortImpl implements VersioningServicePort {
 	public List<CmisObjectType> getAllVersions(String repositoryId,
 			String objectId, String filter, Boolean includeAllowableActions,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("filter: " + filter);
 		return service.getAllVersions(repositoryId, objectId, filter, includeAllowableActions, extension);
 	}
 
@@ -54,6 +62,8 @@ public class VersioningServicePortImpl implements VersioningServicePort {
 	public void checkOut(String repositoryId, Holder<String> objectId,
 			Holder<CmisExtensionType> extension, Holder<Boolean> contentCopied)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		service.checkOut(repositoryId, objectId, extension, contentCopied);
 	}
 
@@ -65,6 +75,9 @@ public class VersioningServicePortImpl implements VersioningServicePort {
 			String renditionFilter, Boolean includePolicyIds,
 			Boolean includeACL, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("filter: " + filter);
 		return service.getObjectOfLatestVersion(repositoryId, objectId, major, filter, includeAllowableActions, includeRelationships, renditionFilter, includePolicyIds, includeACL, extension);
 	}
 
@@ -72,12 +85,17 @@ public class VersioningServicePortImpl implements VersioningServicePort {
 	public CmisPropertiesType getPropertiesOfLatestVersion(String repositoryId,
 			String objectId, Boolean major, String filter,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("filter: " + filter);
 		return service.getPropertiesOfLatestVersion(repositoryId, objectId, major, filter, extension);
 	}
 
 	@Override
 	public void cancelCheckOut(String repositoryId, String objectId,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		service.cancelCheckOut(repositoryId, objectId, extension);
 	}
 
@@ -88,6 +106,9 @@ public class VersioningServicePortImpl implements VersioningServicePort {
 			List<String> policies, CmisAccessControlListType addACEs,
 			CmisAccessControlListType removeACEs,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("properties: " + properties);
 		service.checkIn(repositoryId, objectId, major, properties, contentStream, checkinComment, policies, addACEs, removeACEs, extension);
 	}
 }

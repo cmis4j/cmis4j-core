@@ -25,6 +25,7 @@ SOFTWARE.
 package com.github.cmis4j.core;
 
 import java.math.BigInteger;
+import java.util.logging.Logger;
 
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
@@ -38,14 +39,18 @@ import org.oasis_open.docs.ns.cmis.ws._200908.DiscoveryServicePort;
 
 @WebService(serviceName = "DiscoveryService", portName = "DiscoveryServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.DiscoveryServicePort")
 public class DiscoveryServicePortImpl implements DiscoveryServicePort {
-	private CmisService service;
+	private static final Logger LOG = Logger.getLogger(DiscoveryServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
 	
-	public DiscoveryServicePortImpl(CmisService service) {
+	public DiscoveryServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 	
 	@Override
 	public QueryResponse query(Query parameters) throws CmisException {
+		LOG.info("repositoryId: " + ((parameters != null) ? parameters.getRepositoryId() : "null"));
+		LOG.info("statement: " + ((parameters != null) ? parameters.getStatement() : "null"));
 		return service.query(parameters);
 	}
 
@@ -55,6 +60,9 @@ public class DiscoveryServicePortImpl implements DiscoveryServicePort {
 			String filter, Boolean includePolicyIds, Boolean includeACL,
 			BigInteger maxItems, CmisExtensionType extension,
 			Holder<CmisObjectListType> objects) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("changeLogToken: " + changeLogToken);
+		LOG.info("filter: " + filter);
 		service.getContentChanges(repositoryId, changeLogToken, includeProperties, filter, includePolicyIds, includeACL, maxItems, extension, objects);
 	}
 }

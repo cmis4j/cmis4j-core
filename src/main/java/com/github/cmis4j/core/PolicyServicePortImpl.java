@@ -25,7 +25,10 @@ SOFTWARE.
 package com.github.cmis4j.core;
 
 import java.util.List;
+import java.util.logging.Logger;
+
 import javax.xml.ws.Holder;
+
 import org.oasis_open.docs.ns.cmis.core._200908.CmisObjectType;
 import org.oasis_open.docs.ns.cmis.messaging._200908.CmisExtensionType;
 import org.oasis_open.docs.ns.cmis.ws._200908.CmisException;
@@ -33,9 +36,11 @@ import org.oasis_open.docs.ns.cmis.ws._200908.PolicyServicePort;
 
 @javax.jws.WebService(serviceName = "PolicyService", portName = "PolicyServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.PolicyServicePort")
 public class PolicyServicePortImpl implements PolicyServicePort {
-	private CmisService service;
+	private static final Logger LOG = Logger.getLogger(PolicyServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
 
-	public PolicyServicePortImpl(CmisService service) {
+	public PolicyServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
@@ -43,6 +48,9 @@ public class PolicyServicePortImpl implements PolicyServicePort {
 	public void removePolicy(String repositoryId, String policyId,
 			String objectId, Holder<CmisExtensionType> extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("policyId: " + policyId);
 		service.removePolicy(repositoryId, policyId, objectId, extension);
 	}
 
@@ -50,6 +58,9 @@ public class PolicyServicePortImpl implements PolicyServicePort {
 	public void applyPolicy(String repositoryId, String policyId,
 			String objectId, Holder<CmisExtensionType> extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("policyId: " + policyId);
 		service.applyPolicy(repositoryId, policyId, objectId, extension);
 	}
 
@@ -57,6 +68,9 @@ public class PolicyServicePortImpl implements PolicyServicePort {
 	public List<CmisObjectType> getAppliedPolicies(String repositoryId,
 			String objectId, String filter, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("filter: " + filter);
 		return service.getAppliedPolicies(repositoryId, objectId, filter, extension);
 	}
 }

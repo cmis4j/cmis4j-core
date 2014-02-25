@@ -26,6 +26,7 @@ package com.github.cmis4j.core;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
@@ -41,9 +42,11 @@ import org.oasis_open.docs.ns.cmis.ws._200908.RepositoryServicePort;
 
 @WebService(serviceName = "RepositoryService", portName = "RepositoryServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.RepositoryServicePort")
 public class RepositoryServicePortImpl implements RepositoryServicePort {
-	private CmisService service;
+	private static final Logger LOG = Logger.getLogger(RepositoryServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
 	
-	public RepositoryServicePortImpl(CmisService service) {
+	public RepositoryServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 	
@@ -52,12 +55,16 @@ public class RepositoryServicePortImpl implements RepositoryServicePort {
 			String typeId, Boolean includePropertyDefinitions,
 			BigInteger maxItems, BigInteger skipCount,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("typeId: " + typeId);
 		return service.getTypeChildren(repositoryId, typeId, includePropertyDefinitions, maxItems, skipCount, extension);
 	}
 
 	@Override
 	public CmisTypeDefinitionType getTypeDefinition(String repositoryId,
 			String typeId, CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("typeId: " + typeId);
 		return service.getTypeDefinition(repositoryId, typeId, extension);
 	}
 
@@ -65,18 +72,23 @@ public class RepositoryServicePortImpl implements RepositoryServicePort {
 	public void updateType(String repositoryId,
 			Holder<CmisTypeDefinitionType> type, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("type: " + type);
 		service.updateType(repositoryId, type, extension);
 	}
 
 	@Override
 	public CmisRepositoryInfoType getRepositoryInfo(String repositoryId,
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
 		return service.getRepositoryInfo(repositoryId, extension);
 	}
 
 	@Override
 	public void deleteType(String repositoryId, String typeId,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("typeId: " + typeId);
 		service.deleteType(repositoryId, typeId, extension);
 	}
 
@@ -85,6 +97,8 @@ public class RepositoryServicePortImpl implements RepositoryServicePort {
 			String typeId, BigInteger depth,
 			Boolean includePropertyDefinitions, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("typeId: " + typeId);
 		return service.getTypeDescendants(repositoryId, typeId, depth, includePropertyDefinitions, extension);
 	}
 
@@ -92,12 +106,15 @@ public class RepositoryServicePortImpl implements RepositoryServicePort {
 	public void createType(String repositoryId,
 			Holder<CmisTypeDefinitionType> type, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("type: " + type);
 		service.createType(repositoryId, type, extension);
 	}
 
 	@Override
 	public List<CmisRepositoryEntryType> getRepositories(
 			CmisExtensionType extension) throws CmisException {
+		LOG.info("");
 		return service.getRepositories(extension);
 	}
 

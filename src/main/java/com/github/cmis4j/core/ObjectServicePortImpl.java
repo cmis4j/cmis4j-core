@@ -26,8 +26,11 @@ package com.github.cmis4j.core;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.logging.Logger;
+
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
+
 import org.oasis_open.docs.ns.cmis.core._200908.CmisAccessControlListType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisAllowableActionsType;
 import org.oasis_open.docs.ns.cmis.core._200908.CmisBulkUpdateType;
@@ -46,9 +49,11 @@ import org.oasis_open.docs.ns.cmis.ws._200908.ObjectServicePort;
 
 @WebService(serviceName = "ObjectService", portName = "ObjectServicePort", targetNamespace = "http://docs.oasis-open.org/ns/cmis/ws/200908/", endpointInterface = "org.oasis_open.docs.ns.cmis.ws._200908.ObjectServicePort")
 public class ObjectServicePortImpl implements ObjectServicePort {
-	private CmisService service;
+	private static final Logger LOG = Logger.getLogger(ObjectServicePortImpl.class
+			.getName());
+	private CmisServiceBase service;
 
-	public ObjectServicePortImpl(CmisService service) {
+	public ObjectServicePortImpl(CmisServiceBase service) {
 		this.service = service;
 	}
 
@@ -56,6 +61,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 	public CmisPropertiesType getProperties(String repositoryId,
 			String objectId, String filter, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("filter: " + filter);
 		return service.getProperties(repositoryId, objectId, filter, extension);
 	}
 
@@ -63,6 +71,8 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 	public void deleteObject(String repositoryId, String objectId,
 			Boolean allVersions, Holder<CmisExtensionType> extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		service.deleteObject(repositoryId, objectId, allVersions, extension);
 	}
 
@@ -73,6 +83,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			String renditionFilter, Boolean includePolicyIds,
 			Boolean includeACL, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("filter: " + filter);
 		return service.getObject(repositoryId, objectId, filter, includeAllowableActions, includeRelationships, renditionFilter, includePolicyIds, includeACL, extension);
 	}
 
@@ -84,12 +97,18 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			CmisAccessControlListType removeACEs,
 			Holder<CmisExtensionType> extension, Holder<String> objectId)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("sourceId: " + sourceId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("properties: " + properties);
 		service.createDocumentFromSource(repositoryId, sourceId, properties, folderId, versioningState, policies, addACEs, removeACEs, extension, objectId);
 	}
 
 	@Override
 	public CmisAllowableActionsType getAllowableActions(String repositoryId,
 			String objectId, CmisExtensionType extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		return service.getAllowableActions(repositoryId, objectId, extension);
 	}
 
@@ -100,6 +119,8 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			CmisAccessControlListType removeACEs,
 			Holder<CmisExtensionType> extension, Holder<String> objectId)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("properties: " + properties);
 		service.createRelationship(repositoryId, properties, policies, addACEs, removeACEs, extension, objectId);
 	}
 
@@ -107,6 +128,8 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 	public void deleteContentStream(String repositoryId,
 			Holder<String> objectId, Holder<String> changeToken,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		service.deleteContentStream(repositoryId, objectId, changeToken, extension);
 	}
 
@@ -116,6 +139,7 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			Holder<CmisExtensionType> extension,
 			Holder<CmisObjectIdAndChangeTokenType> objectIdAndChangeToken)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
 		service.bulkUpdateProperties(repositoryId, bulkUpdateData, extension, objectIdAndChangeToken);
 	}
 
@@ -124,6 +148,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			String objectId, String streamId, BigInteger offset,
 			BigInteger length, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("streamId: " + streamId);
 		return service.getContentStream(repositoryId, objectId, streamId, offset, length, extension);
 	}
 
@@ -132,6 +159,8 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			Boolean allVersions, EnumUnfileObject unfileObjects,
 			Boolean continueOnFailure, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
 		return service.deleteTree(repositoryId, folderId, allVersions, unfileObjects, continueOnFailure, extension);
 	}
 
@@ -142,6 +171,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			String renditionFilter, Boolean includePolicyIds,
 			Boolean includeACL, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("path: " + path);
+		LOG.info("filter: " + filter);
 		return service.getObjectByPath(repositoryId, path, filter, includeAllowableActions, includeRelationships, renditionFilter, includePolicyIds, includeACL, extension);
 	}
 
@@ -149,6 +181,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 	public void updateProperties(String repositoryId, Holder<String> objectId,
 			Holder<String> changeToken, CmisPropertiesType properties,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
+		LOG.info("properties: " + properties);
 		service.updateProperties(repositoryId, objectId, changeToken, properties, extension);
 	}
 
@@ -158,6 +193,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			CmisAccessControlListType removeACEs,
 			Holder<CmisExtensionType> extension, Holder<String> objectId)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("properties: " + properties);
 		service.createItem(repositoryId, properties, folderId, addACEs, removeACEs, extension, objectId);
 	}
 
@@ -170,6 +208,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			CmisAccessControlListType removeACEs,
 			Holder<CmisExtensionType> extension, Holder<String> objectId)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("properties: " + properties);
 		service.createDocument(repositoryId, properties, folderId, contentStream, versioningState, policies, addACEs, removeACEs, extension, objectId);
 	}
 
@@ -180,6 +221,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			CmisAccessControlListType removeACEs,
 			Holder<CmisExtensionType> extension, Holder<String> objectId)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("properties: " + properties);
 		service.createPolicy(repositoryId, properties, folderId, policies, addACEs, removeACEs, extension, objectId);
 	}
 
@@ -188,6 +232,8 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			Holder<String> objectId, Boolean isLastChunk,
 			Holder<String> changeToken, CmisContentStreamType contentStream,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		service.appendContentStream(repositoryId, objectId, isLastChunk, changeToken, contentStream, extension);
 	}
 
@@ -196,6 +242,8 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			String objectId, String renditionFilter, BigInteger maxItems,
 			BigInteger skipCount, CmisExtensionType extension)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		return service.getRenditions(repositoryId, objectId, renditionFilter, maxItems, skipCount, extension);
 	}
 
@@ -204,6 +252,8 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			Boolean overwriteFlag, Holder<String> changeToken,
 			CmisContentStreamType contentStream,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		service.setContentStream(repositoryId, objectId, overwriteFlag, changeToken, contentStream, extension);
 	}
 
@@ -211,6 +261,8 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 	public void moveObject(String repositoryId, Holder<String> objectId,
 			String targetFolderId, String sourceFolderId,
 			Holder<CmisExtensionType> extension) throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("objectId: " + objectId);
 		service.moveObject(repositoryId, objectId, targetFolderId, sourceFolderId, extension);
 	}
 
@@ -221,6 +273,9 @@ public class ObjectServicePortImpl implements ObjectServicePort {
 			CmisAccessControlListType removeACEs,
 			Holder<CmisExtensionType> extension, Holder<String> objectId)
 			throws CmisException {
+		LOG.info("repositoryId: " + repositoryId);
+		LOG.info("folderId: " + folderId);
+		LOG.info("properties: " + properties);
 		service.createFolder(repositoryId, properties, folderId, policies, addACEs, removeACEs, extension, objectId);
 	}
 }
