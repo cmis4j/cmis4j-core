@@ -15,7 +15,7 @@ Maven pom.xml dependency:
 <dependency>
 	<groupId>com.github.cmis4j</groupId>
 	<artifactId>cmis4j-core</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0</version>
 </dependency>
 ```
 or, download artifacts directly from https://github.com/cmis4j/cmis4j-core/releases.
